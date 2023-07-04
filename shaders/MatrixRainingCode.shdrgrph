@@ -1,0 +1,2059 @@
+{
+  "Model": "models/dev/plane.vmdl",
+  "Description": "Red pill or the Blue pill?",
+  "BlendMode": "Opaque",
+  "nodes": [
+    {
+      "_class": "Result",
+      "Albedo": {
+        "Identifier": "160",
+        "Output": "Result"
+      },
+      "Emission": {
+        "Identifier": "160",
+        "Output": "Result"
+      },
+      "Opacity": {
+        "Identifier": "149",
+        "Output": "Result"
+      },
+      "Normal": {},
+      "Roughness": {},
+      "Metalness": {},
+      "AmbientOcclusion": {},
+      "DefaultOpacity": 0.22692183,
+      "DefaultRoughness": 1,
+      "DefaultMetalness": 0,
+      "DefaultAmbientOcclusion": 0,
+      "PositionOffset": {},
+      "Identifier": "0",
+      "Position": "6960,-368"
+    },
+    {
+      "_class": "CommentNode",
+      "Size": "395,226",
+      "Color": "Green",
+      "Description": "",
+      "Title": "Rain speed control",
+      "Layer": 2,
+      "Identifier": "1",
+      "Position": "-528,-496"
+    },
+    {
+      "_class": "Time",
+      "Identifier": "2",
+      "Position": "-496,-432"
+    },
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 64,
+      "Value": 8,
+      "Name": "Rain Speed",
+      "IsAttribute": false,
+      "UI": {
+        "Type": "Slider",
+        "Priority": 4,
+        "PrimaryGroup": {
+          "Name": "Parameters"
+        },
+        "SecondaryGroup": {
+          "Name": ""
+        }
+      },
+      "Identifier": "3",
+      "Position": "-496,-368"
+    },
+    {
+      "_class": "Multiply",
+      "A": {
+        "Identifier": "2",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "3",
+        "Output": "Result"
+      },
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "4",
+      "Position": "-240,-416"
+    },
+    {
+      "_class": "Ceil",
+      "Input": {
+        "Identifier": "10",
+        "Output": "Result"
+      },
+      "Identifier": "5",
+      "Position": "960,-576"
+    },
+    {
+      "_class": "Multiply",
+      "A": {
+        "Identifier": "5",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "163",
+        "Output": "Result"
+      },
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "6",
+      "Position": "1120,-576"
+    },
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 1,
+      "Value": 0.015625,
+      "Name": "Step In Characters",
+      "IsAttribute": false,
+      "UI": {
+        "Priority": 6,
+        "PrimaryGroup": {
+          "Name": "Parameters"
+        },
+        "SecondaryGroup": {
+          "Name": ""
+        }
+      },
+      "Identifier": "7",
+      "Position": "624,-496"
+    },
+    {
+      "_class": "CommentNode",
+      "Size": "224,162",
+      "Color": "Green",
+      "Description": "0.015625",
+      "Title": "Step in characters",
+      "Layer": 1,
+      "Identifier": "8",
+      "Position": "592,-576"
+    },
+    {
+      "_class": "CommentNode",
+      "Size": "299,191",
+      "Color": "Green",
+      "Description": "",
+      "Title": "CeiledTime",
+      "Layer": 2,
+      "Identifier": "9",
+      "Position": "928,-656"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "",
+      "Input": {
+        "Identifier": "143",
+        "Output": "Result"
+      },
+      "Identifier": "10",
+      "Position": "544,-768"
+    },
+    {
+      "_class": "Multiply",
+      "A": {
+        "Identifier": "14",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "12",
+        "Output": "Result"
+      },
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "11",
+      "Position": "720,-288"
+    },
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 1,
+      "Value": 0.2,
+      "Name": "Double Speed Value",
+      "IsAttribute": false,
+      "UI": {
+        "Priority": 6,
+        "PrimaryGroup": {
+          "Name": "Parameters"
+        },
+        "SecondaryGroup": {
+          "Name": ""
+        }
+      },
+      "Identifier": "12",
+      "Position": "544,-224"
+    },
+    {
+      "_class": "CommentNode",
+      "Size": "315,226",
+      "Color": "Green",
+      "Description": "",
+      "Title": "Double Speed",
+      "Layer": 3,
+      "Identifier": "13",
+      "Position": "512,-368"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "",
+      "Input": {
+        "Identifier": "143",
+        "Output": "Result"
+      },
+      "Identifier": "14",
+      "Position": "464,-240"
+    },
+    {
+      "_class": "CommentNode",
+      "Size": "299,207",
+      "Color": "Green",
+      "Description": "",
+      "Title": "CeiledTimeFaster",
+      "Layer": 2,
+      "Identifier": "15",
+      "Position": "928,-448"
+    },
+    {
+      "_class": "Ceil",
+      "Input": {
+        "Identifier": "11",
+        "Output": "Result"
+      },
+      "Identifier": "16",
+      "Position": "944,-352"
+    },
+    {
+      "_class": "Multiply",
+      "A": {
+        "Identifier": "16",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "18",
+        "Output": "Result"
+      },
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "17",
+      "Position": "1136,-352"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "",
+      "Input": {
+        "Identifier": "162",
+        "Output": "Result"
+      },
+      "Identifier": "18",
+      "Position": "1056,-368"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "",
+      "Input": {
+        "Identifier": "161",
+        "Output": "Result"
+      },
+      "Identifier": "19",
+      "Position": "1056,-128"
+    },
+    {
+      "_class": "Multiply",
+      "A": {
+        "Identifier": "11",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "19",
+        "Output": "Result"
+      },
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "20",
+      "Position": "1136,-112"
+    },
+    {
+      "_class": "CommentNode",
+      "Size": "299,207",
+      "Color": "Green",
+      "Description": "",
+      "Title": "Double Time*Step",
+      "Layer": 2,
+      "Identifier": "21",
+      "Position": "928,-208"
+    },
+    {
+      "_class": "SplitVector",
+      "Input": {
+        "Identifier": "137",
+        "Output": "Result"
+      },
+      "Identifier": "22",
+      "Position": "1472,-560"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "R",
+      "Input": {
+        "Identifier": "22",
+        "Output": "X"
+      },
+      "Identifier": "23",
+      "Position": "1696,-544"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "G",
+      "Input": {
+        "Identifier": "22",
+        "Output": "Y"
+      },
+      "Identifier": "24",
+      "Position": "1696,-496"
+    },
+    {
+      "_class": "Subtract",
+      "A": {
+        "Identifier": "24",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "28",
+        "Output": "Result"
+      },
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "25",
+      "Position": "1792,-384"
+    },
+    {
+      "_class": "Subtract",
+      "A": {
+        "Identifier": "24",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "29",
+        "Output": "Result"
+      },
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "26",
+      "Position": "1792,-288"
+    },
+    {
+      "_class": "Subtract",
+      "A": {
+        "Identifier": "24",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "30",
+        "Output": "Result"
+      },
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "27",
+      "Position": "1792,-192"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "Ceiled Time",
+      "Input": {
+        "Identifier": "6",
+        "Output": "Result"
+      },
+      "Identifier": "28",
+      "Position": "1328,-336"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "Ceiled Time Faster",
+      "Input": {
+        "Identifier": "17",
+        "Output": "Result"
+      },
+      "Identifier": "29",
+      "Position": "1328,-240"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "Double Time*Step",
+      "Input": {
+        "Identifier": "20",
+        "Output": "Result"
+      },
+      "Identifier": "30",
+      "Position": "1328,-128"
+    },
+    {
+      "_class": "Subtract",
+      "A": {
+        "Identifier": "24",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "32",
+        "Output": "Result"
+      },
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "31",
+      "Position": "1904,-800"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "",
+      "Input": {
+        "Identifier": "33",
+        "Output": "Result"
+      },
+      "Identifier": "32",
+      "Position": "1216,-752"
+    },
+    {
+      "_class": "Multiply",
+      "A": {
+        "Identifier": "10",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "164",
+        "Output": "Result"
+      },
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "33",
+      "Position": "1024,-816"
+    },
+    {
+      "_class": "CommentNode",
+      "Size": "304,191",
+      "Color": "Green",
+      "Description": "",
+      "Title": "Time*Step",
+      "Layer": 4,
+      "Identifier": "34",
+      "Position": "992,-896"
+    },
+    {
+      "_class": "CombineVector",
+      "X": {
+        "Identifier": "41",
+        "Output": "Result"
+      },
+      "Y": {
+        "Identifier": "31",
+        "Output": "Result"
+      },
+      "Z": {},
+      "W": {},
+      "DefaultX": 0,
+      "DefaultY": 0,
+      "DefaultZ": 0,
+      "DefaultW": 0,
+      "Identifier": "35",
+      "Position": "2096,-624"
+    },
+    {
+      "_class": "CommentNode",
+      "Size": "224,234",
+      "Color": "Green",
+      "Description": "",
+      "Title": "UV Pan",
+      "Layer": 5,
+      "Identifier": "36",
+      "Position": "2064,-704"
+    },
+    {
+      "_class": "CommentNode",
+      "Size": "224,234",
+      "Color": "Green",
+      "Description": "",
+      "Title": "Ceiled UVs Pan",
+      "Layer": 5,
+      "Identifier": "37",
+      "Position": "2064,-464"
+    },
+    {
+      "_class": "CombineVector",
+      "X": {
+        "Identifier": "41",
+        "Output": "Result"
+      },
+      "Y": {
+        "Identifier": "25",
+        "Output": "Result"
+      },
+      "Z": {},
+      "W": {},
+      "DefaultX": 0,
+      "DefaultY": 0,
+      "DefaultZ": 0,
+      "DefaultW": 0,
+      "Identifier": "38",
+      "Position": "2096,-384"
+    },
+    {
+      "_class": "CommentNode",
+      "Size": "224,234",
+      "Color": "Green",
+      "Description": "",
+      "Title": "Ceiled UVs Pan Fast",
+      "Layer": 5,
+      "Identifier": "39",
+      "Position": "2064,-224"
+    },
+    {
+      "_class": "CombineVector",
+      "X": {
+        "Identifier": "41",
+        "Output": "Result"
+      },
+      "Y": {
+        "Identifier": "26",
+        "Output": "Result"
+      },
+      "Z": {},
+      "W": {},
+      "DefaultX": 0,
+      "DefaultY": 0,
+      "DefaultZ": 0,
+      "DefaultW": 0,
+      "Identifier": "40",
+      "Position": "2096,-144"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "R",
+      "Input": {
+        "Identifier": "23",
+        "Output": "Result"
+      },
+      "Identifier": "41",
+      "Position": "1936,-544"
+    },
+    {
+      "_class": "CombineVector",
+      "X": {
+        "Identifier": "41",
+        "Output": "Result"
+      },
+      "Y": {
+        "Identifier": "27",
+        "Output": "Result"
+      },
+      "Z": {},
+      "W": {},
+      "DefaultX": 0,
+      "DefaultY": 0,
+      "DefaultZ": 0,
+      "DefaultW": 0,
+      "Identifier": "42",
+      "Position": "2096,96"
+    },
+    {
+      "_class": "CommentNode",
+      "Size": "224,234",
+      "Color": "Green",
+      "Description": "",
+      "Title": "UV Pan Fast",
+      "Layer": 4,
+      "Identifier": "43",
+      "Position": "2064,16"
+    },
+    {
+      "_class": "TextureSampler",
+      "Coords": {
+        "Identifier": "35",
+        "Output": "Vector"
+      },
+      "Texture": "textures/matrixrain/moving_textures_png_1edde518.generated.vtex",
+      "Sampler": {},
+      "UI": {
+        "Name": "MovingTextures",
+        "Default": "1,1,1,1",
+        "SrgbRead": true,
+        "PrimaryGroup": {
+          "Name": "Textures"
+        },
+        "SecondaryGroup": {
+          "Name": ""
+        },
+        "CreateInput": "CreateInputTexture2D"
+      },
+      "Identifier": "44",
+      "Position": "2496,-624"
+    },
+    {
+      "_class": "TextureSampler",
+      "Coords": {
+        "Identifier": "40",
+        "Output": "Vector"
+      },
+      "Texture": "textures/matrixrain/moving_textures_png_1edde518.generated.vtex",
+      "Sampler": {},
+      "UI": {
+        "Name": "MovingTextures",
+        "Default": "1,1,1,1",
+        "SrgbRead": true,
+        "PrimaryGroup": {
+          "Name": "Textures"
+        },
+        "CreateInput": "CreateInputTexture2D"
+      },
+      "Identifier": "45",
+      "Position": "2496,-240"
+    },
+    {
+      "_class": "TextureSampler",
+      "Coords": {
+        "Identifier": "38",
+        "Output": "Vector"
+      },
+      "Texture": "textures/matrixrain/moving_textures_png_1edde518.generated.vtex",
+      "Sampler": {},
+      "UI": {
+        "Name": "MovingTextures",
+        "Default": "1,1,1,1",
+        "SrgbRead": true,
+        "PrimaryGroup": {
+          "Name": "Textures"
+        },
+        "CreateInput": "CreateInputTexture2D"
+      },
+      "Identifier": "46",
+      "Position": "2496,-432"
+    },
+    {
+      "_class": "TextureSampler",
+      "Coords": {
+        "Identifier": "42",
+        "Output": "Vector"
+      },
+      "Texture": "textures/matrixrain/moving_textures_png_1edde518.generated.vtex",
+      "Sampler": {},
+      "UI": {
+        "Name": "MovingTextures",
+        "Default": "1,1,1,1",
+        "SrgbRead": true,
+        "PrimaryGroup": {
+          "Name": "Textures"
+        },
+        "CreateInput": "CreateInputTexture2D"
+      },
+      "Identifier": "47",
+      "Position": "2496,-48"
+    },
+    {
+      "_class": "TextureSampler",
+      "Coords": {
+        "Identifier": "135",
+        "Output": "Result"
+      },
+      "Texture": "textures/matrixrain/letters_lanes_pixel_variations_png_6e677a22.generated.vtex",
+      "Sampler": {},
+      "UI": {
+        "Name": "Not Moving Mask",
+        "Default": "1,1,1,1",
+        "SrgbRead": true,
+        "PrimaryGroup": {
+          "Name": "Textures"
+        },
+        "CreateInput": "CreateInputTexture2D"
+      },
+      "Identifier": "48",
+      "Position": "2496,240"
+    },
+    {
+      "_class": "CommentNode",
+      "Size": "224,288",
+      "Color": "Green",
+      "Description": "",
+      "Title": "Not Moving Mask",
+      "Layer": 5,
+      "Identifier": "49",
+      "Position": "2464,160"
+    },
+    {
+      "_class": "Multiply",
+      "A": {
+        "Identifier": "60",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "56",
+        "Output": "Result"
+      },
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "50",
+      "Position": "3424,-544"
+    },
+    {
+      "_class": "CommentNode",
+      "Size": "480,191",
+      "Color": "Green",
+      "Description": "Invert Values",
+      "Title": "One-Minus",
+      "Layer": 1,
+      "Identifier": "51",
+      "Position": "2816,-512"
+    },
+    {
+      "_class": "Multiply",
+      "A": {
+        "Identifier": "56",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "62",
+        "Output": "Result"
+      },
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "52",
+      "Position": "3424,-432"
+    },
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 1,
+      "Value": 1,
+      "Name": "",
+      "IsAttribute": false,
+      "UI": {},
+      "Identifier": "53",
+      "Position": "2864,-432"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "",
+      "Input": {
+        "Identifier": "46",
+        "Output": "Result"
+      },
+      "Identifier": "54",
+      "Position": "2832,-304"
+    },
+    {
+      "_class": "Subtract",
+      "A": {
+        "Identifier": "53",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "64",
+        "Output": "Result"
+      },
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "55",
+      "Position": "3104,-448"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "Output",
+      "Input": {
+        "Identifier": "55",
+        "Output": "Result"
+      },
+      "Identifier": "56",
+      "Position": "3248,-400"
+    },
+    {
+      "_class": "CommentNode",
+      "Size": "139,288",
+      "Color": "Green",
+      "Description": "",
+      "Title": "Slow Lanes",
+      "Layer": 5,
+      "Identifier": "57",
+      "Position": "3392,-608"
+    },
+    {
+      "_class": "Multiply",
+      "A": {
+        "Identifier": "165",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "45",
+        "Output": "Result"
+      },
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "58",
+      "Position": "3424,-128"
+    },
+    {
+      "_class": "Multiply",
+      "A": {
+        "Identifier": "165",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "47",
+        "Output": "Result"
+      },
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "59",
+      "Position": "3424,-16"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "",
+      "Input": {
+        "Identifier": "61",
+        "Output": "Result"
+      },
+      "Identifier": "60",
+      "Position": "3264,-528"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "",
+      "Input": {
+        "Identifier": "44",
+        "Output": "Result"
+      },
+      "Identifier": "61",
+      "Position": "2800,-528"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "",
+      "Input": {
+        "Identifier": "54",
+        "Output": "Result"
+      },
+      "Identifier": "62",
+      "Position": "3280,-304"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "",
+      "Input": {
+        "Identifier": "65",
+        "Output": "Result"
+      },
+      "Identifier": "63",
+      "Position": "2784,-336"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "",
+      "Input": {
+        "Identifier": "63",
+        "Output": "Result"
+      },
+      "Identifier": "64",
+      "Position": "3024,-336"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "",
+      "Input": {
+        "Identifier": "48",
+        "Output": "R"
+      },
+      "Identifier": "65",
+      "Position": "2784,288"
+    },
+    {
+      "_class": "CommentNode",
+      "Size": "139,304",
+      "Color": "Green",
+      "Description": "",
+      "Title": "Fast Lanes",
+      "Layer": 5,
+      "Identifier": "66",
+      "Position": "3392,-192"
+    },
+    {
+      "_class": "Add",
+      "A": {
+        "Identifier": "50",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "59",
+        "Output": "Result"
+      },
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "67",
+      "Position": "3792,-560"
+    },
+    {
+      "_class": "CommentNode",
+      "Size": "256,160",
+      "Color": "Green",
+      "Description": "",
+      "Title": "Fast and slow pan combined",
+      "Layer": 4,
+      "Identifier": "68",
+      "Position": "3696,-608"
+    },
+    {
+      "_class": "CommentNode",
+      "Size": "256,176",
+      "Color": "Green",
+      "Description": "",
+      "Title": "Fast and slow pan combined",
+      "Layer": 5,
+      "Identifier": "69",
+      "Position": "3696,-192"
+    },
+    {
+      "_class": "Add",
+      "A": {
+        "Identifier": "58",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "52",
+        "Output": "Result"
+      },
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "70",
+      "Position": "3792,-128"
+    },
+    {
+      "_class": "SplitVector",
+      "Input": {
+        "Identifier": "67",
+        "Output": "Result"
+      },
+      "Identifier": "71",
+      "Position": "3984,-592"
+    },
+    {
+      "_class": "SplitVector",
+      "Input": {
+        "Identifier": "70",
+        "Output": "Result"
+      },
+      "Identifier": "72",
+      "Position": "3984,-176"
+    },
+    {
+      "_class": "Add",
+      "A": {
+        "Identifier": "71",
+        "Output": "X"
+      },
+      "B": {
+        "Identifier": "72",
+        "Output": "Y"
+      },
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "73",
+      "Position": "4544,-448"
+    },
+    {
+      "_class": "Multiply",
+      "A": {
+        "Identifier": "73",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "77",
+        "Output": "Result"
+      },
+      "DefaultA": 0,
+      "DefaultB": 0.7,
+      "Identifier": "74",
+      "Position": "4752,-448"
+    },
+    {
+      "_class": "CommentNode",
+      "Size": "139,191",
+      "Color": "Green",
+      "Description": "",
+      "Title": "Rain Opacity",
+      "Layer": 5,
+      "Identifier": "75",
+      "Position": "4720,-512"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "G Channel ( Letters )",
+      "Input": {
+        "Identifier": "48",
+        "Output": "G"
+      },
+      "Identifier": "76",
+      "Position": "4320,320"
+    },
+    {
+      "_class": "Multiply",
+      "A": {
+        "Identifier": "76",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "91",
+        "Output": "Result"
+      },
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "77",
+      "Position": "4512,-32"
+    },
+    {
+      "_class": "CommentNode",
+      "Size": "139,191",
+      "Color": "Green",
+      "Description": "",
+      "Title": "Rain Emission",
+      "Layer": 5,
+      "Identifier": "78",
+      "Position": "4720,-288"
+    },
+    {
+      "_class": "Multiply",
+      "A": {
+        "Identifier": "72",
+        "Output": "Y"
+      },
+      "B": {
+        "Identifier": "77",
+        "Output": "Result"
+      },
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "79",
+      "Position": "4752,-224"
+    },
+    {
+      "_class": "Multiply",
+      "A": {
+        "Identifier": "87",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "81",
+        "Output": "Result"
+      },
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "80",
+      "Position": "5312,-432"
+    },
+    {
+      "_class": "Float4",
+      "Value": "0.39608,1,0.21569,1",
+      "Name": "Letters Color",
+      "IsAttribute": false,
+      "UI": {
+        "Type": "Color",
+        "PrimaryGroup": {
+          "Name": "Parameters"
+        }
+      },
+      "Identifier": "81",
+      "Position": "5008,-512"
+    },
+    {
+      "_class": "Float4",
+      "Value": "0.832,1,0.788,1",
+      "Name": "Letters Color Emission",
+      "IsAttribute": false,
+      "UI": {
+        "Type": "Color",
+        "Priority": 1,
+        "PrimaryGroup": {
+          "Name": "Parameters"
+        }
+      },
+      "Identifier": "82",
+      "Position": "5008,-16"
+    },
+    {
+      "_class": "Multiply",
+      "A": {
+        "Identifier": "82",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "88",
+        "Output": "Result"
+      },
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "83",
+      "Position": "5328,-112"
+    },
+    {
+      "_class": "Add",
+      "A": {
+        "Identifier": "80",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "83",
+        "Output": "Result"
+      },
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "84",
+      "Position": "5456,-432"
+    },
+    {
+      "_class": "CommentNode",
+      "Size": "224,754",
+      "Color": "Green",
+      "Description": "",
+      "Title": "Rain Color",
+      "Layer": 5,
+      "Identifier": "85",
+      "Position": "4976,-576"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "",
+      "Input": {
+        "Identifier": "74",
+        "Output": "Result"
+      },
+      "Identifier": "86",
+      "Position": "4960,-304"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "",
+      "Input": {
+        "Identifier": "86",
+        "Output": "Result"
+      },
+      "Identifier": "87",
+      "Position": "5232,-304"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "",
+      "Input": {
+        "Identifier": "79",
+        "Output": "Result"
+      },
+      "Identifier": "88",
+      "Position": "4944,-48"
+    },
+    {
+      "_class": "Multiply",
+      "A": {
+        "Identifier": "130",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "90",
+        "Output": "Result"
+      },
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "89",
+      "Position": "432,1760"
+    },
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 1,
+      "Value": 0.5,
+      "Name": "Cell Noise Speed",
+      "IsAttribute": false,
+      "UI": {
+        "Type": "Slider",
+        "Priority": 5,
+        "PrimaryGroup": {
+          "Name": "Parameters"
+        },
+        "SecondaryGroup": {
+          "Name": ""
+        }
+      },
+      "Identifier": "90",
+      "Position": "208,1776"
+    },
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 8,
+      "Value": 1,
+      "Name": "Rain Brightness",
+      "IsAttribute": false,
+      "UI": {
+        "Type": "Slider",
+        "Priority": 4,
+        "PrimaryGroup": {
+          "Name": "Parameters"
+        },
+        "SecondaryGroup": {
+          "Name": ""
+        }
+      },
+      "Identifier": "91",
+      "Position": "4288,-16"
+    },
+    {
+      "_class": "Multiply",
+      "A": {
+        "Identifier": "115",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "109",
+        "Output": "Result"
+      },
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "92",
+      "Position": "1472,1488"
+    },
+    {
+      "_class": "Multiply",
+      "A": {
+        "Identifier": "99",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "89",
+        "Output": "Result"
+      },
+      "DefaultA": 0,
+      "DefaultB": 0.4,
+      "Identifier": "93",
+      "Position": "800,1456"
+    },
+    {
+      "_class": "Frac",
+      "Input": {
+        "Identifier": "96",
+        "Output": "Result"
+      },
+      "Identifier": "94",
+      "Position": "2048,1760"
+    },
+    {
+      "_class": "Saturate",
+      "Input": {
+        "Identifier": "94",
+        "Output": "Result"
+      },
+      "Identifier": "95",
+      "Position": "2208,1760"
+    },
+    {
+      "_class": "Multiply",
+      "A": {
+        "Identifier": "111",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "116",
+        "Output": "Result"
+      },
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "96",
+      "Position": "1936,1760"
+    },
+    {
+      "_class": "Multiply",
+      "A": {
+        "Identifier": "121",
+        "Output": "B"
+      },
+      "B": {
+        "Identifier": "95",
+        "Output": "Result"
+      },
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "97",
+      "Position": "2864,1472"
+    },
+    {
+      "_class": "CommentNode",
+      "Size": "942,240",
+      "Color": "Green",
+      "Description": "",
+      "Title": "Shrimple Random Generator",
+      "Layer": 2,
+      "Identifier": "98",
+      "Position": "944,1424"
+    },
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 1,
+      "Value": 4,
+      "Name": "",
+      "IsAttribute": false,
+      "UI": {
+        "PrimaryGroup": {
+          "Name": ""
+        },
+        "SecondaryGroup": {
+          "Name": ""
+        }
+      },
+      "Identifier": "99",
+      "Position": "560,1456"
+    },
+    {
+      "_class": "Frac",
+      "Input": {
+        "Identifier": "92",
+        "Output": "Result"
+      },
+      "Identifier": "100",
+      "Position": "1584,1488"
+    },
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 1,
+      "Value": 0.0318,
+      "Name": "",
+      "IsAttribute": false,
+      "UI": {},
+      "Identifier": "101",
+      "Position": "960,1568"
+    },
+    {
+      "_class": "SplitVector",
+      "Input": {
+        "Identifier": "138",
+        "Output": "Result"
+      },
+      "Identifier": "102",
+      "Position": "1728,1280"
+    },
+    {
+      "_class": "Saturate",
+      "Input": {
+        "Identifier": "100",
+        "Output": "Result"
+      },
+      "Identifier": "103",
+      "Position": "1744,1488"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "R",
+      "Input": {
+        "Identifier": "102",
+        "Output": "X"
+      },
+      "Identifier": "104",
+      "Position": "1920,1328"
+    },
+    {
+      "_class": "Multiply",
+      "A": {
+        "Identifier": "113",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "101",
+        "Output": "Result"
+      },
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "105",
+      "Position": "1168,1488"
+    },
+    {
+      "_class": "CommentNode",
+      "Size": "363,191",
+      "Color": "Green",
+      "Description": "",
+      "Title": "Speed of pixel noise",
+      "Layer": 5,
+      "Identifier": "106",
+      "Position": "176,1696"
+    },
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 1,
+      "Value": 0.0318,
+      "Name": "",
+      "IsAttribute": false,
+      "UI": {},
+      "Identifier": "107",
+      "Position": "1424,1840"
+    },
+    {
+      "_class": "Add",
+      "A": {
+        "Identifier": "114",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "103",
+        "Output": "Result"
+      },
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "108",
+      "Position": "2048,1504"
+    },
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 31530000,
+      "Value": 31530000,
+      "Name": "",
+      "IsAttribute": false,
+      "UI": {},
+      "Identifier": "109",
+      "Position": "1280,1568"
+    },
+    {
+      "_class": "Add",
+      "A": {
+        "Identifier": "104",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "103",
+        "Output": "Result"
+      },
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "110",
+      "Position": "2048,1408"
+    },
+    {
+      "_class": "Sine",
+      "Input": {
+        "Identifier": "118",
+        "Output": "Result"
+      },
+      "Identifier": "111",
+      "Position": "1744,1760"
+    },
+    {
+      "_class": "CommentNode",
+      "Size": "942,240",
+      "Color": "Green",
+      "Description": "",
+      "Title": "Shrimple Random Generator for flashing",
+      "Layer": 3,
+      "Identifier": "112",
+      "Position": "1408,1696"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "In Time",
+      "Input": {
+        "Identifier": "93",
+        "Output": "Result"
+      },
+      "Identifier": "113",
+      "Position": "1072,1536"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "G",
+      "Input": {
+        "Identifier": "102",
+        "Output": "Y"
+      },
+      "Identifier": "114",
+      "Position": "1920,1376"
+    },
+    {
+      "_class": "Sine",
+      "Input": {
+        "Identifier": "105",
+        "Output": "Result"
+      },
+      "Identifier": "115",
+      "Position": "1280,1488"
+    },
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 31530000,
+      "Value": 31530000,
+      "Name": "",
+      "IsAttribute": false,
+      "UI": {},
+      "Identifier": "116",
+      "Position": "1744,1840"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "In Time",
+      "Input": {
+        "Identifier": "89",
+        "Output": "Result"
+      },
+      "Identifier": "117",
+      "Position": "1536,1808"
+    },
+    {
+      "_class": "Multiply",
+      "A": {
+        "Identifier": "117",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "107",
+        "Output": "Result"
+      },
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "118",
+      "Position": "1632,1760"
+    },
+    {
+      "_class": "CombineVector",
+      "X": {
+        "Identifier": "110",
+        "Output": "Result"
+      },
+      "Y": {
+        "Identifier": "108",
+        "Output": "Result"
+      },
+      "Z": {},
+      "W": {},
+      "DefaultX": 0,
+      "DefaultY": 0,
+      "DefaultZ": 0,
+      "DefaultW": 0,
+      "Identifier": "119",
+      "Position": "2160,1408"
+    },
+    {
+      "_class": "CommentNode",
+      "Size": "1824,488",
+      "Color": "White",
+      "Description": "",
+      "Title": "Pixel noise coords",
+      "Layer": 5,
+      "Identifier": "120",
+      "Position": "528,1200"
+    },
+    {
+      "_class": "TextureSampler",
+      "Coords": {
+        "Identifier": "119",
+        "Output": "Vector"
+      },
+      "Texture": "textures/matrixrain/moving_textures_png_1edde518.generated.vtex",
+      "Sampler": {},
+      "UI": {
+        "Name": "Moving Textures",
+        "Default": "1,1,1,1",
+        "SrgbRead": true,
+        "PrimaryGroup": {
+          "Name": "Textures"
+        },
+        "CreateInput": "CreateInputTexture2D"
+      },
+      "Identifier": "121",
+      "Position": "2480,1296"
+    },
+    {
+      "_class": "Multiply",
+      "A": {
+        "Identifier": "97",
+        "Output": "Result"
+      },
+      "B": {},
+      "DefaultA": 0,
+      "DefaultB": 0.5,
+      "Identifier": "122",
+      "Position": "3024,1472"
+    },
+    {
+      "_class": "CommentNode",
+      "Size": "299,191",
+      "Color": "Green",
+      "Description": "",
+      "Title": "Cell Noise",
+      "Layer": 5,
+      "Identifier": "123",
+      "Position": "2832,1392"
+    },
+    {
+      "_class": "Float4",
+      "Value": "0.39608,1,0.21569,1",
+      "Name": "Cell Noise Color",
+      "IsAttribute": false,
+      "UI": {
+        "Type": "Color",
+        "Priority": 3,
+        "PrimaryGroup": {
+          "Name": "Parameters"
+        }
+      },
+      "Identifier": "124",
+      "Position": "2976,1712"
+    },
+    {
+      "_class": "Multiply",
+      "A": {
+        "Identifier": "122",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "124",
+        "Output": "Result"
+      },
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "125",
+      "Position": "3392,1552"
+    },
+    {
+      "_class": "Add",
+      "A": {
+        "Identifier": "133",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "84",
+        "Output": "Result"
+      },
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "126",
+      "Position": "6080,-448"
+    },
+    {
+      "_class": "CommentNode",
+      "Size": "3355,840",
+      "Color": "Blue",
+      "Description": "",
+      "Title": "Noise",
+      "Layer": 5,
+      "Identifier": "127",
+      "Position": "144,1120"
+    },
+    {
+      "_class": "CommentNode",
+      "Size": "139,223",
+      "Color": "Green",
+      "Description": "TODO : Param to disabel this",
+      "Title": "Pixel Noise",
+      "Layer": 5,
+      "Identifier": "128",
+      "Position": "6048,-544"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "",
+      "Input": {
+        "Identifier": "152",
+        "Output": "Result"
+      },
+      "Identifier": "129",
+      "Position": "240,1616"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "",
+      "Input": {
+        "Identifier": "129",
+        "Output": "Result"
+      },
+      "Identifier": "130",
+      "Position": "368,1760"
+    },
+    {
+      "_class": "CommentNode",
+      "Size": "139,223",
+      "Color": "Green",
+      "Description": "Finished Rain effect",
+      "Title": "Rain",
+      "Layer": 5,
+      "Identifier": "131",
+      "Position": "5424,-528"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "",
+      "Input": {
+        "Identifier": "125",
+        "Output": "Result"
+      },
+      "Identifier": "132",
+      "Position": "5360,336"
+    },
+    {
+      "_class": "Saturate",
+      "Input": {
+        "Identifier": "146",
+        "Output": "Result"
+      },
+      "Identifier": "133",
+      "Position": "5904,-448"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "Time Highway",
+      "Input": {
+        "Identifier": "2",
+        "Output": "Result"
+      },
+      "Identifier": "134",
+      "Position": "-80,-48"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "Texture Coord Highway",
+      "Input": {
+        "Identifier": "138",
+        "Output": "Result"
+      },
+      "Identifier": "135",
+      "Position": "2032,272"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "",
+      "Input": {
+        "Identifier": "141",
+        "Output": "Result"
+      },
+      "Identifier": "136",
+      "Position": "464,-928"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "",
+      "Input": {
+        "Identifier": "136",
+        "Output": "Result"
+      },
+      "Identifier": "137",
+      "Position": "1344,-928"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "Texture Coord Highway",
+      "Input": {
+        "Identifier": "139",
+        "Output": "Result"
+      },
+      "Identifier": "138",
+      "Position": "992,256"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "Texture Coord Highway",
+      "Input": {
+        "Identifier": "141",
+        "Output": "Result"
+      },
+      "Identifier": "139",
+      "Position": "400,256"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "",
+      "Input": {
+        "Identifier": "134",
+        "Output": "Result"
+      },
+      "Identifier": "140",
+      "Position": "64,-48"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "Texture Coord Highway",
+      "Input": {
+        "Identifier": "157",
+        "Output": "Result"
+      },
+      "Identifier": "141",
+      "Position": "400,-752"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "Time Highway",
+      "Input": {
+        "Identifier": "140",
+        "Output": "Result"
+      },
+      "Identifier": "142",
+      "Position": "80,832"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "",
+      "Input": {
+        "Identifier": "4",
+        "Output": "Result"
+      },
+      "Identifier": "143",
+      "Position": "304,-368"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "G Channel ( Letters )",
+      "Input": {
+        "Identifier": "76",
+        "Output": "Result"
+      },
+      "Identifier": "144",
+      "Position": "5760,320"
+    },
+    {
+      "_class": "CommentNode",
+      "Size": "363,207",
+      "Color": "Green",
+      "Description": "How bright the rain should be",
+      "Title": "Brightness Control",
+      "Layer": 5,
+      "Identifier": "145",
+      "Position": "4256,-96"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "",
+      "Input": {
+        "Identifier": "132",
+        "Output": "Result"
+      },
+      "Identifier": "146",
+      "Position": "5760,32"
+    },
+    {
+      "_class": "CommentNode",
+      "Size": "347,327",
+      "Color": "White",
+      "Description": "",
+      "Title": "Mix in other stages",
+      "Layer": 5,
+      "Identifier": "147",
+      "Position": "5872,-608"
+    },
+    {
+      "_class": "CommentNode",
+      "Size": "224,266",
+      "Color": "Green",
+      "Description": "Whether we should use transparency or not",
+      "Title": "",
+      "Layer": 5,
+      "Identifier": "148",
+      "Position": "6480,192"
+    },
+    {
+      "_class": "Branch",
+      "True": {
+        "Identifier": "144",
+        "Output": "Result"
+      },
+      "False": {
+        "Identifier": "151",
+        "Output": "R"
+      },
+      "A": {},
+      "B": {},
+      "Name": "Enable Transparency",
+      "Operator": "Equal",
+      "Enabled": false,
+      "UI": {
+        "PrimaryGroup": {
+          "Name": ""
+        }
+      },
+      "Identifier": "149",
+      "Position": "6512,256"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "",
+      "Input": {
+        "Identifier": "7",
+        "Output": "Result"
+      },
+      "Identifier": "150",
+      "Position": "880,-464"
+    },
+    {
+      "_class": "Float4",
+      "Value": "1,1,1,1",
+      "Name": "",
+      "IsAttribute": false,
+      "UI": {
+        "Type": "Color",
+        "PrimaryGroup": {
+          "Name": ""
+        }
+      },
+      "Identifier": "151",
+      "Position": "6256,320"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "",
+      "Input": {
+        "Identifier": "142",
+        "Output": "Result"
+      },
+      "Identifier": "152",
+      "Position": "96,1616"
+    },
+    {
+      "_class": "ScreenCoordinate",
+      "Identifier": "153",
+      "Position": "-480,-880"
+    },
+    {
+      "_class": "CommentNode",
+      "Size": "768,416",
+      "Color": "Green",
+      "Description": "",
+      "Title": "Coords To use",
+      "Layer": 4,
+      "Identifier": "154",
+      "Position": "-512,-1008"
+    },
+    {
+      "_class": "TextureCoord",
+      "UseSecondaryCoord": false,
+      "Tiling": "1,1",
+      "Identifier": "155",
+      "Position": "-480,-816"
+    },
+    {
+      "_class": "Branch",
+      "True": {
+        "Identifier": "153",
+        "Output": "Result"
+      },
+      "False": {
+        "Identifier": "155",
+        "Output": "Result"
+      },
+      "A": {},
+      "B": {},
+      "Name": "Use Screen Coordinates",
+      "Operator": "Equal",
+      "Enabled": false,
+      "UI": {
+        "Priority": 6,
+        "PrimaryGroup": {
+          "Name": "Parameters"
+        }
+      },
+      "Identifier": "156",
+      "Position": "-240,-864"
+    },
+    {
+      "_class": "TileAndOffset",
+      "Coords": {
+        "Identifier": "156",
+        "Output": "Result"
+      },
+      "Tile": {
+        "Identifier": "158",
+        "Output": "Result"
+      },
+      "Offset": {},
+      "DefaultTile": "1,1",
+      "DefaultOffset": "0,0",
+      "WrapTo01": false,
+      "Identifier": "157",
+      "Position": "48,-864"
+    },
+    {
+      "_class": "Float2",
+      "Value": "1,1",
+      "Name": "Tile X,Y Amount",
+      "IsAttribute": false,
+      "UI": {
+        "Priority": 3,
+        "PrimaryGroup": {
+          "Name": "Parameters"
+        }
+      },
+      "Identifier": "158",
+      "Position": "-240,-720"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "",
+      "Input": {
+        "Identifier": "84",
+        "Output": "Result"
+      },
+      "Identifier": "159",
+      "Position": "5856,-656"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "",
+      "Input": {
+        "Identifier": "159",
+        "Output": "Result"
+      },
+      "Identifier": "160",
+      "Position": "6320,-656"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "",
+      "Input": {
+        "Identifier": "150",
+        "Output": "Result"
+      },
+      "Identifier": "161",
+      "Position": "896,-144"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "",
+      "Input": {
+        "Identifier": "150",
+        "Output": "Result"
+      },
+      "Identifier": "162",
+      "Position": "960,-368"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "",
+      "Input": {
+        "Identifier": "150",
+        "Output": "Result"
+      },
+      "Identifier": "163",
+      "Position": "944,-512"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "",
+      "Input": {
+        "Identifier": "150",
+        "Output": "Result"
+      },
+      "Identifier": "164",
+      "Position": "880,-752"
+    },
+    {
+      "_class": "Reroute",
+      "Comment": "",
+      "Input": {
+        "Identifier": "65",
+        "Output": "Result"
+      },
+      "Identifier": "165",
+      "Position": "3280,288"
+    }
+  ]
+}

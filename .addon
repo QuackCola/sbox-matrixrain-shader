@@ -1,0 +1,19 @@
+{
+  "Title": "Matrix Rain Shader",
+  "Type": "content",
+  "Org": "quack",
+  "Ident": "matrixrain",
+  "Tags": "shader shadergraph matrix",
+  "Schema": 1,
+  "HasAssets": true,
+  "AssetsPath": "",
+  "Resources": null,
+  "MenuResources": null,
+  "HasCode": false,
+  "CodePath": "",
+  "PackageReferences": [],
+  "EditorReferences": null,
+  "Metadata": {
+    "ProjectTemplate": null
+  }
+}

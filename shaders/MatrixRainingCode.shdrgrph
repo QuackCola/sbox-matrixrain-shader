@@ -6,15 +6,15 @@
     {
       "_class": "Result",
       "Albedo": {
-        "Identifier": "160",
+        "Identifier": "84",
         "Output": "Result"
       },
       "Emission": {
-        "Identifier": "160",
+        "Identifier": "84",
         "Output": "Result"
       },
       "Opacity": {
-        "Identifier": "149",
+        "Identifier": "100",
         "Output": "Result"
       },
       "Normal": {},
@@ -27,7 +27,7 @@
       "DefaultAmbientOcclusion": 0,
       "PositionOffset": {},
       "Identifier": "0",
-      "Position": "6960,-368"
+      "Position": "5936,-512"
     },
     {
       "_class": "CommentNode",
@@ -95,7 +95,7 @@
         "Output": "Result"
       },
       "B": {
-        "Identifier": "163",
+        "Identifier": "111",
         "Output": "Result"
       },
       "DefaultA": 0,
@@ -146,7 +146,7 @@
       "_class": "Reroute",
       "Comment": "",
       "Input": {
-        "Identifier": "143",
+        "Identifier": "96",
         "Output": "Result"
       },
       "Identifier": "10",
@@ -200,7 +200,7 @@
       "_class": "Reroute",
       "Comment": "",
       "Input": {
-        "Identifier": "143",
+        "Identifier": "96",
         "Output": "Result"
       },
       "Identifier": "14",
@@ -244,7 +244,7 @@
       "_class": "Reroute",
       "Comment": "",
       "Input": {
-        "Identifier": "162",
+        "Identifier": "110",
         "Output": "Result"
       },
       "Identifier": "18",
@@ -254,7 +254,7 @@
       "_class": "Reroute",
       "Comment": "",
       "Input": {
-        "Identifier": "161",
+        "Identifier": "109",
         "Output": "Result"
       },
       "Identifier": "19",
@@ -288,7 +288,7 @@
     {
       "_class": "SplitVector",
       "Input": {
-        "Identifier": "137",
+        "Identifier": "93",
         "Output": "Result"
       },
       "Identifier": "22",
@@ -421,7 +421,7 @@
         "Output": "Result"
       },
       "B": {
-        "Identifier": "164",
+        "Identifier": "112",
         "Output": "Result"
       },
       "DefaultA": 0,
@@ -571,7 +571,7 @@
         "Identifier": "35",
         "Output": "Vector"
       },
-      "Texture": "textures/matrixrain/moving_textures_png_1edde518.generated.vtex",
+      "Texture": "textures/matrixrain/1k/moving_textures_png_b5e34143.generated.vtex",
       "Sampler": {},
       "UI": {
         "Name": "MovingTextures",
@@ -594,7 +594,7 @@
         "Identifier": "40",
         "Output": "Vector"
       },
-      "Texture": "textures/matrixrain/moving_textures_png_1edde518.generated.vtex",
+      "Texture": "textures/matrixrain/1k/moving_textures_png_b5e34143.generated.vtex",
       "Sampler": {},
       "UI": {
         "Name": "MovingTextures",
@@ -614,7 +614,7 @@
         "Identifier": "38",
         "Output": "Vector"
       },
-      "Texture": "textures/matrixrain/moving_textures_png_1edde518.generated.vtex",
+      "Texture": "textures/matrixrain/1k/moving_textures_png_b5e34143.generated.vtex",
       "Sampler": {},
       "UI": {
         "Name": "MovingTextures",
@@ -634,7 +634,7 @@
         "Identifier": "42",
         "Output": "Vector"
       },
-      "Texture": "textures/matrixrain/moving_textures_png_1edde518.generated.vtex",
+      "Texture": "textures/matrixrain/1k/moving_textures_png_b5e34143.generated.vtex",
       "Sampler": {},
       "UI": {
         "Name": "MovingTextures",
@@ -651,10 +651,10 @@
     {
       "_class": "TextureSampler",
       "Coords": {
-        "Identifier": "135",
+        "Identifier": "91",
         "Output": "Result"
       },
-      "Texture": "textures/matrixrain/letters_lanes_pixel_variations_png_6e677a22.generated.vtex",
+      "Texture": "textures/matrixrain/1k/letters_lanes_pixel_variations_png_ce2530e1.generated.vtex",
       "Sampler": {},
       "UI": {
         "Name": "Not Moving Mask",
@@ -777,7 +777,7 @@
     {
       "_class": "Multiply",
       "A": {
-        "Identifier": "165",
+        "Identifier": "113",
         "Output": "Result"
       },
       "B": {
@@ -792,7 +792,7 @@
     {
       "_class": "Multiply",
       "A": {
-        "Identifier": "165",
+        "Identifier": "113",
         "Output": "Result"
       },
       "B": {
@@ -836,7 +836,7 @@
     },
     {
       "_class": "Reroute",
-      "Comment": "",
+      "Comment": "R Channel (Not Moving Mask)",
       "Input": {
         "Identifier": "65",
         "Output": "Result"
@@ -856,7 +856,7 @@
     },
     {
       "_class": "Reroute",
-      "Comment": "",
+      "Comment": "R Channel (Not Moving Mask)",
       "Input": {
         "Identifier": "48",
         "Output": "R"
@@ -999,7 +999,7 @@
         "Output": "Result"
       },
       "B": {
-        "Identifier": "91",
+        "Identifier": "89",
         "Output": "Result"
       },
       "DefaultA": 0,
@@ -1147,41 +1147,6 @@
       "Position": "4944,-48"
     },
     {
-      "_class": "Multiply",
-      "A": {
-        "Identifier": "130",
-        "Output": "Result"
-      },
-      "B": {
-        "Identifier": "90",
-        "Output": "Result"
-      },
-      "DefaultA": 0,
-      "DefaultB": 1,
-      "Identifier": "89",
-      "Position": "432,1760"
-    },
-    {
-      "_class": "Float",
-      "Min": 0,
-      "Max": 1,
-      "Value": 0.5,
-      "Name": "Cell Noise Speed",
-      "IsAttribute": false,
-      "UI": {
-        "Type": "Slider",
-        "Priority": 5,
-        "PrimaryGroup": {
-          "Name": "Parameters"
-        },
-        "SecondaryGroup": {
-          "Name": ""
-        }
-      },
-      "Identifier": "90",
-      "Position": "208,1776"
-    },
-    {
       "_class": "Float",
       "Min": 0,
       "Max": 8,
@@ -1198,479 +1163,8 @@
           "Name": ""
         }
       },
-      "Identifier": "91",
+      "Identifier": "89",
       "Position": "4288,-16"
-    },
-    {
-      "_class": "Multiply",
-      "A": {
-        "Identifier": "115",
-        "Output": "Result"
-      },
-      "B": {
-        "Identifier": "109",
-        "Output": "Result"
-      },
-      "DefaultA": 0,
-      "DefaultB": 1,
-      "Identifier": "92",
-      "Position": "1472,1488"
-    },
-    {
-      "_class": "Multiply",
-      "A": {
-        "Identifier": "99",
-        "Output": "Result"
-      },
-      "B": {
-        "Identifier": "89",
-        "Output": "Result"
-      },
-      "DefaultA": 0,
-      "DefaultB": 0.4,
-      "Identifier": "93",
-      "Position": "800,1456"
-    },
-    {
-      "_class": "Frac",
-      "Input": {
-        "Identifier": "96",
-        "Output": "Result"
-      },
-      "Identifier": "94",
-      "Position": "2048,1760"
-    },
-    {
-      "_class": "Saturate",
-      "Input": {
-        "Identifier": "94",
-        "Output": "Result"
-      },
-      "Identifier": "95",
-      "Position": "2208,1760"
-    },
-    {
-      "_class": "Multiply",
-      "A": {
-        "Identifier": "111",
-        "Output": "Result"
-      },
-      "B": {
-        "Identifier": "116",
-        "Output": "Result"
-      },
-      "DefaultA": 0,
-      "DefaultB": 1,
-      "Identifier": "96",
-      "Position": "1936,1760"
-    },
-    {
-      "_class": "Multiply",
-      "A": {
-        "Identifier": "121",
-        "Output": "B"
-      },
-      "B": {
-        "Identifier": "95",
-        "Output": "Result"
-      },
-      "DefaultA": 0,
-      "DefaultB": 1,
-      "Identifier": "97",
-      "Position": "2864,1472"
-    },
-    {
-      "_class": "CommentNode",
-      "Size": "942,240",
-      "Color": "Green",
-      "Description": "",
-      "Title": "Shrimple Random Generator",
-      "Layer": 2,
-      "Identifier": "98",
-      "Position": "944,1424"
-    },
-    {
-      "_class": "Float",
-      "Min": 0,
-      "Max": 1,
-      "Value": 4,
-      "Name": "",
-      "IsAttribute": false,
-      "UI": {
-        "PrimaryGroup": {
-          "Name": ""
-        },
-        "SecondaryGroup": {
-          "Name": ""
-        }
-      },
-      "Identifier": "99",
-      "Position": "560,1456"
-    },
-    {
-      "_class": "Frac",
-      "Input": {
-        "Identifier": "92",
-        "Output": "Result"
-      },
-      "Identifier": "100",
-      "Position": "1584,1488"
-    },
-    {
-      "_class": "Float",
-      "Min": 0,
-      "Max": 1,
-      "Value": 0.0318,
-      "Name": "",
-      "IsAttribute": false,
-      "UI": {},
-      "Identifier": "101",
-      "Position": "960,1568"
-    },
-    {
-      "_class": "SplitVector",
-      "Input": {
-        "Identifier": "138",
-        "Output": "Result"
-      },
-      "Identifier": "102",
-      "Position": "1728,1280"
-    },
-    {
-      "_class": "Saturate",
-      "Input": {
-        "Identifier": "100",
-        "Output": "Result"
-      },
-      "Identifier": "103",
-      "Position": "1744,1488"
-    },
-    {
-      "_class": "Reroute",
-      "Comment": "R",
-      "Input": {
-        "Identifier": "102",
-        "Output": "X"
-      },
-      "Identifier": "104",
-      "Position": "1920,1328"
-    },
-    {
-      "_class": "Multiply",
-      "A": {
-        "Identifier": "113",
-        "Output": "Result"
-      },
-      "B": {
-        "Identifier": "101",
-        "Output": "Result"
-      },
-      "DefaultA": 0,
-      "DefaultB": 1,
-      "Identifier": "105",
-      "Position": "1168,1488"
-    },
-    {
-      "_class": "CommentNode",
-      "Size": "363,191",
-      "Color": "Green",
-      "Description": "",
-      "Title": "Speed of pixel noise",
-      "Layer": 5,
-      "Identifier": "106",
-      "Position": "176,1696"
-    },
-    {
-      "_class": "Float",
-      "Min": 0,
-      "Max": 1,
-      "Value": 0.0318,
-      "Name": "",
-      "IsAttribute": false,
-      "UI": {},
-      "Identifier": "107",
-      "Position": "1424,1840"
-    },
-    {
-      "_class": "Add",
-      "A": {
-        "Identifier": "114",
-        "Output": "Result"
-      },
-      "B": {
-        "Identifier": "103",
-        "Output": "Result"
-      },
-      "DefaultA": 0,
-      "DefaultB": 1,
-      "Identifier": "108",
-      "Position": "2048,1504"
-    },
-    {
-      "_class": "Float",
-      "Min": 0,
-      "Max": 31530000,
-      "Value": 31530000,
-      "Name": "",
-      "IsAttribute": false,
-      "UI": {},
-      "Identifier": "109",
-      "Position": "1280,1568"
-    },
-    {
-      "_class": "Add",
-      "A": {
-        "Identifier": "104",
-        "Output": "Result"
-      },
-      "B": {
-        "Identifier": "103",
-        "Output": "Result"
-      },
-      "DefaultA": 0,
-      "DefaultB": 1,
-      "Identifier": "110",
-      "Position": "2048,1408"
-    },
-    {
-      "_class": "Sine",
-      "Input": {
-        "Identifier": "118",
-        "Output": "Result"
-      },
-      "Identifier": "111",
-      "Position": "1744,1760"
-    },
-    {
-      "_class": "CommentNode",
-      "Size": "942,240",
-      "Color": "Green",
-      "Description": "",
-      "Title": "Shrimple Random Generator for flashing",
-      "Layer": 3,
-      "Identifier": "112",
-      "Position": "1408,1696"
-    },
-    {
-      "_class": "Reroute",
-      "Comment": "In Time",
-      "Input": {
-        "Identifier": "93",
-        "Output": "Result"
-      },
-      "Identifier": "113",
-      "Position": "1072,1536"
-    },
-    {
-      "_class": "Reroute",
-      "Comment": "G",
-      "Input": {
-        "Identifier": "102",
-        "Output": "Y"
-      },
-      "Identifier": "114",
-      "Position": "1920,1376"
-    },
-    {
-      "_class": "Sine",
-      "Input": {
-        "Identifier": "105",
-        "Output": "Result"
-      },
-      "Identifier": "115",
-      "Position": "1280,1488"
-    },
-    {
-      "_class": "Float",
-      "Min": 0,
-      "Max": 31530000,
-      "Value": 31530000,
-      "Name": "",
-      "IsAttribute": false,
-      "UI": {},
-      "Identifier": "116",
-      "Position": "1744,1840"
-    },
-    {
-      "_class": "Reroute",
-      "Comment": "In Time",
-      "Input": {
-        "Identifier": "89",
-        "Output": "Result"
-      },
-      "Identifier": "117",
-      "Position": "1536,1808"
-    },
-    {
-      "_class": "Multiply",
-      "A": {
-        "Identifier": "117",
-        "Output": "Result"
-      },
-      "B": {
-        "Identifier": "107",
-        "Output": "Result"
-      },
-      "DefaultA": 0,
-      "DefaultB": 1,
-      "Identifier": "118",
-      "Position": "1632,1760"
-    },
-    {
-      "_class": "CombineVector",
-      "X": {
-        "Identifier": "110",
-        "Output": "Result"
-      },
-      "Y": {
-        "Identifier": "108",
-        "Output": "Result"
-      },
-      "Z": {},
-      "W": {},
-      "DefaultX": 0,
-      "DefaultY": 0,
-      "DefaultZ": 0,
-      "DefaultW": 0,
-      "Identifier": "119",
-      "Position": "2160,1408"
-    },
-    {
-      "_class": "CommentNode",
-      "Size": "1824,488",
-      "Color": "White",
-      "Description": "",
-      "Title": "Pixel noise coords",
-      "Layer": 5,
-      "Identifier": "120",
-      "Position": "528,1200"
-    },
-    {
-      "_class": "TextureSampler",
-      "Coords": {
-        "Identifier": "119",
-        "Output": "Vector"
-      },
-      "Texture": "textures/matrixrain/moving_textures_png_1edde518.generated.vtex",
-      "Sampler": {},
-      "UI": {
-        "Name": "Moving Textures",
-        "Default": "1,1,1,1",
-        "SrgbRead": true,
-        "PrimaryGroup": {
-          "Name": "Textures"
-        },
-        "CreateInput": "CreateInputTexture2D"
-      },
-      "Identifier": "121",
-      "Position": "2480,1296"
-    },
-    {
-      "_class": "Multiply",
-      "A": {
-        "Identifier": "97",
-        "Output": "Result"
-      },
-      "B": {},
-      "DefaultA": 0,
-      "DefaultB": 0.5,
-      "Identifier": "122",
-      "Position": "3024,1472"
-    },
-    {
-      "_class": "CommentNode",
-      "Size": "299,191",
-      "Color": "Green",
-      "Description": "",
-      "Title": "Cell Noise",
-      "Layer": 5,
-      "Identifier": "123",
-      "Position": "2832,1392"
-    },
-    {
-      "_class": "Float4",
-      "Value": "0.39608,1,0.21569,1",
-      "Name": "Cell Noise Color",
-      "IsAttribute": false,
-      "UI": {
-        "Type": "Color",
-        "Priority": 3,
-        "PrimaryGroup": {
-          "Name": "Parameters"
-        }
-      },
-      "Identifier": "124",
-      "Position": "2976,1712"
-    },
-    {
-      "_class": "Multiply",
-      "A": {
-        "Identifier": "122",
-        "Output": "Result"
-      },
-      "B": {
-        "Identifier": "124",
-        "Output": "Result"
-      },
-      "DefaultA": 0,
-      "DefaultB": 1,
-      "Identifier": "125",
-      "Position": "3392,1552"
-    },
-    {
-      "_class": "Add",
-      "A": {
-        "Identifier": "133",
-        "Output": "Result"
-      },
-      "B": {
-        "Identifier": "84",
-        "Output": "Result"
-      },
-      "DefaultA": 0,
-      "DefaultB": 1,
-      "Identifier": "126",
-      "Position": "6080,-448"
-    },
-    {
-      "_class": "CommentNode",
-      "Size": "3355,840",
-      "Color": "Blue",
-      "Description": "",
-      "Title": "Noise",
-      "Layer": 5,
-      "Identifier": "127",
-      "Position": "144,1120"
-    },
-    {
-      "_class": "CommentNode",
-      "Size": "139,223",
-      "Color": "Green",
-      "Description": "TODO : Param to disabel this",
-      "Title": "Pixel Noise",
-      "Layer": 5,
-      "Identifier": "128",
-      "Position": "6048,-544"
-    },
-    {
-      "_class": "Reroute",
-      "Comment": "",
-      "Input": {
-        "Identifier": "152",
-        "Output": "Result"
-      },
-      "Identifier": "129",
-      "Position": "240,1616"
-    },
-    {
-      "_class": "Reroute",
-      "Comment": "",
-      "Input": {
-        "Identifier": "129",
-        "Output": "Result"
-      },
-      "Identifier": "130",
-      "Position": "368,1760"
     },
     {
       "_class": "CommentNode",
@@ -1679,117 +1173,58 @@
       "Description": "Finished Rain effect",
       "Title": "Rain",
       "Layer": 5,
-      "Identifier": "131",
+      "Identifier": "90",
       "Position": "5424,-528"
-    },
-    {
-      "_class": "Reroute",
-      "Comment": "",
-      "Input": {
-        "Identifier": "125",
-        "Output": "Result"
-      },
-      "Identifier": "132",
-      "Position": "5360,336"
-    },
-    {
-      "_class": "Saturate",
-      "Input": {
-        "Identifier": "146",
-        "Output": "Result"
-      },
-      "Identifier": "133",
-      "Position": "5904,-448"
-    },
-    {
-      "_class": "Reroute",
-      "Comment": "Time Highway",
-      "Input": {
-        "Identifier": "2",
-        "Output": "Result"
-      },
-      "Identifier": "134",
-      "Position": "-80,-48"
     },
     {
       "_class": "Reroute",
       "Comment": "Texture Coord Highway",
       "Input": {
-        "Identifier": "138",
+        "Identifier": "94",
         "Output": "Result"
       },
-      "Identifier": "135",
-      "Position": "2032,272"
+      "Identifier": "91",
+      "Position": "2032,288"
     },
     {
       "_class": "Reroute",
       "Comment": "",
       "Input": {
-        "Identifier": "141",
+        "Identifier": "95",
         "Output": "Result"
       },
-      "Identifier": "136",
-      "Position": "464,-928"
+      "Identifier": "92",
+      "Position": "400,-928"
     },
     {
       "_class": "Reroute",
       "Comment": "",
       "Input": {
-        "Identifier": "136",
+        "Identifier": "92",
         "Output": "Result"
       },
-      "Identifier": "137",
+      "Identifier": "93",
       "Position": "1344,-928"
     },
     {
       "_class": "Reroute",
       "Comment": "Texture Coord Highway",
       "Input": {
-        "Identifier": "139",
+        "Identifier": "95",
         "Output": "Result"
       },
-      "Identifier": "138",
-      "Position": "992,256"
+      "Identifier": "94",
+      "Position": "400,272"
     },
     {
       "_class": "Reroute",
       "Comment": "Texture Coord Highway",
       "Input": {
-        "Identifier": "141",
+        "Identifier": "107",
         "Output": "Result"
       },
-      "Identifier": "139",
-      "Position": "400,256"
-    },
-    {
-      "_class": "Reroute",
-      "Comment": "",
-      "Input": {
-        "Identifier": "134",
-        "Output": "Result"
-      },
-      "Identifier": "140",
-      "Position": "64,-48"
-    },
-    {
-      "_class": "Reroute",
-      "Comment": "Texture Coord Highway",
-      "Input": {
-        "Identifier": "157",
-        "Output": "Result"
-      },
-      "Identifier": "141",
+      "Identifier": "95",
       "Position": "400,-752"
-    },
-    {
-      "_class": "Reroute",
-      "Comment": "Time Highway",
-      "Input": {
-        "Identifier": "140",
-        "Output": "Result"
-      },
-      "Identifier": "142",
-      "Position": "80,832"
     },
     {
       "_class": "Reroute",
@@ -1798,7 +1233,7 @@
         "Identifier": "4",
         "Output": "Result"
       },
-      "Identifier": "143",
+      "Identifier": "96",
       "Position": "304,-368"
     },
     {
@@ -1808,8 +1243,8 @@
         "Identifier": "76",
         "Output": "Result"
       },
-      "Identifier": "144",
-      "Position": "5760,320"
+      "Identifier": "97",
+      "Position": "4976,320"
     },
     {
       "_class": "CommentNode",
@@ -1818,28 +1253,8 @@
       "Description": "How bright the rain should be",
       "Title": "Brightness Control",
       "Layer": 5,
-      "Identifier": "145",
+      "Identifier": "98",
       "Position": "4256,-96"
-    },
-    {
-      "_class": "Reroute",
-      "Comment": "",
-      "Input": {
-        "Identifier": "132",
-        "Output": "Result"
-      },
-      "Identifier": "146",
-      "Position": "5760,32"
-    },
-    {
-      "_class": "CommentNode",
-      "Size": "347,327",
-      "Color": "White",
-      "Description": "",
-      "Title": "Mix in other stages",
-      "Layer": 5,
-      "Identifier": "147",
-      "Position": "5872,-608"
     },
     {
       "_class": "CommentNode",
@@ -1848,17 +1263,17 @@
       "Description": "Whether we should use transparency or not",
       "Title": "",
       "Layer": 5,
-      "Identifier": "148",
-      "Position": "6480,192"
+      "Identifier": "99",
+      "Position": "5456,176"
     },
     {
       "_class": "Branch",
       "True": {
-        "Identifier": "144",
+        "Identifier": "97",
         "Output": "Result"
       },
       "False": {
-        "Identifier": "151",
+        "Identifier": "102",
         "Output": "R"
       },
       "A": {},
@@ -1871,8 +1286,8 @@
           "Name": ""
         }
       },
-      "Identifier": "149",
-      "Position": "6512,256"
+      "Identifier": "100",
+      "Position": "5472,272"
     },
     {
       "_class": "Reroute",
@@ -1881,7 +1296,7 @@
         "Identifier": "7",
         "Output": "Result"
       },
-      "Identifier": "150",
+      "Identifier": "101",
       "Position": "880,-464"
     },
     {
@@ -1895,22 +1310,12 @@
           "Name": ""
         }
       },
-      "Identifier": "151",
-      "Position": "6256,320"
-    },
-    {
-      "_class": "Reroute",
-      "Comment": "",
-      "Input": {
-        "Identifier": "142",
-        "Output": "Result"
-      },
-      "Identifier": "152",
-      "Position": "96,1616"
+      "Identifier": "102",
+      "Position": "5248,336"
     },
     {
       "_class": "ScreenCoordinate",
-      "Identifier": "153",
+      "Identifier": "103",
       "Position": "-480,-880"
     },
     {
@@ -1918,26 +1323,26 @@
       "Size": "768,416",
       "Color": "Green",
       "Description": "",
-      "Title": "Coords To use",
+      "Title": "Coords",
       "Layer": 4,
-      "Identifier": "154",
+      "Identifier": "104",
       "Position": "-512,-1008"
     },
     {
       "_class": "TextureCoord",
       "UseSecondaryCoord": false,
       "Tiling": "1,1",
-      "Identifier": "155",
+      "Identifier": "105",
       "Position": "-480,-816"
     },
     {
       "_class": "Branch",
       "True": {
-        "Identifier": "153",
+        "Identifier": "103",
         "Output": "Result"
       },
       "False": {
-        "Identifier": "155",
+        "Identifier": "105",
         "Output": "Result"
       },
       "A": {},
@@ -1951,24 +1356,24 @@
           "Name": "Parameters"
         }
       },
-      "Identifier": "156",
+      "Identifier": "106",
       "Position": "-240,-864"
     },
     {
       "_class": "TileAndOffset",
       "Coords": {
-        "Identifier": "156",
+        "Identifier": "106",
         "Output": "Result"
       },
       "Tile": {
-        "Identifier": "158",
+        "Identifier": "108",
         "Output": "Result"
       },
       "Offset": {},
       "DefaultTile": "1,1",
       "DefaultOffset": "0,0",
       "WrapTo01": false,
-      "Identifier": "157",
+      "Identifier": "107",
       "Position": "48,-864"
     },
     {
@@ -1982,77 +1387,57 @@
           "Name": "Parameters"
         }
       },
-      "Identifier": "158",
+      "Identifier": "108",
       "Position": "-240,-720"
     },
     {
       "_class": "Reroute",
       "Comment": "",
       "Input": {
-        "Identifier": "84",
+        "Identifier": "101",
         "Output": "Result"
       },
-      "Identifier": "159",
-      "Position": "5856,-656"
-    },
-    {
-      "_class": "Reroute",
-      "Comment": "",
-      "Input": {
-        "Identifier": "159",
-        "Output": "Result"
-      },
-      "Identifier": "160",
-      "Position": "6320,-656"
-    },
-    {
-      "_class": "Reroute",
-      "Comment": "",
-      "Input": {
-        "Identifier": "150",
-        "Output": "Result"
-      },
-      "Identifier": "161",
+      "Identifier": "109",
       "Position": "896,-144"
     },
     {
       "_class": "Reroute",
       "Comment": "",
       "Input": {
-        "Identifier": "150",
+        "Identifier": "101",
         "Output": "Result"
       },
-      "Identifier": "162",
+      "Identifier": "110",
       "Position": "960,-368"
     },
     {
       "_class": "Reroute",
       "Comment": "",
       "Input": {
-        "Identifier": "150",
+        "Identifier": "101",
         "Output": "Result"
       },
-      "Identifier": "163",
+      "Identifier": "111",
       "Position": "944,-512"
     },
     {
       "_class": "Reroute",
       "Comment": "",
       "Input": {
-        "Identifier": "150",
+        "Identifier": "101",
         "Output": "Result"
       },
-      "Identifier": "164",
+      "Identifier": "112",
       "Position": "880,-752"
     },
     {
       "_class": "Reroute",
-      "Comment": "",
+      "Comment": "R Channel (Not Moving Mask)",
       "Input": {
         "Identifier": "65",
         "Output": "Result"
       },
-      "Identifier": "165",
+      "Identifier": "113",
       "Position": "3280,288"
     }
   ]

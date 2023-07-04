@@ -27,7 +27,6 @@ COMMON
 	
 	#include "common/shared.hlsl"
 	#include "procedural.hlsl"
-	#include "blendmodes.hlsl"
 
 	#define S_UV2 1
 	#define CUSTOM_MATERIAL_INPUTS

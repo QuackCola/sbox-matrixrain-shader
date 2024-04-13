@@ -1,0 +1,1 @@
+When bringing the generated bitmaps from Processing into Substance designer, only Link the files and do not import them.

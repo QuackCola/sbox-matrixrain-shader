@@ -1,5 +1,5 @@
 {
-  "Model": "models/dev/plane.vmdl",
+  "Model": "models/dev/box.vmdl",
   "Description": "Red pill or the Blue pill?",
   "BlendMode": "Opaque",
   "nodes": [
@@ -571,11 +571,12 @@
         "Identifier": "35",
         "Output": "Vector"
       },
-      "Texture": "textures/matrixrain/1k/moving_textures_png_b5e34143.generated.vtex",
+      "Image": "textures/matrixrain/1k/moving_textures.png",
       "Sampler": {},
       "UI": {
         "Name": "MovingTextures",
         "Default": "1,1,1,1",
+        "ImageFormat": "BC7",
         "SrgbRead": true,
         "PrimaryGroup": {
           "Name": "Textures"
@@ -594,11 +595,12 @@
         "Identifier": "40",
         "Output": "Vector"
       },
-      "Texture": "textures/matrixrain/1k/moving_textures_png_b5e34143.generated.vtex",
+      "Image": "textures/matrixrain/1k/moving_textures.png",
       "Sampler": {},
       "UI": {
         "Name": "MovingTextures",
         "Default": "1,1,1,1",
+        "ImageFormat": "BC7",
         "SrgbRead": true,
         "PrimaryGroup": {
           "Name": "Textures"
@@ -614,11 +616,12 @@
         "Identifier": "38",
         "Output": "Vector"
       },
-      "Texture": "textures/matrixrain/1k/moving_textures_png_b5e34143.generated.vtex",
+      "Image": "textures/matrixrain/1k/moving_textures.png",
       "Sampler": {},
       "UI": {
         "Name": "MovingTextures",
         "Default": "1,1,1,1",
+        "ImageFormat": "BC7",
         "SrgbRead": true,
         "PrimaryGroup": {
           "Name": "Textures"
@@ -634,11 +637,12 @@
         "Identifier": "42",
         "Output": "Vector"
       },
-      "Texture": "textures/matrixrain/1k/moving_textures_png_b5e34143.generated.vtex",
+      "Image": "textures/matrixrain/1k/moving_textures.png",
       "Sampler": {},
       "UI": {
         "Name": "MovingTextures",
         "Default": "1,1,1,1",
+        "ImageFormat": "BC7",
         "SrgbRead": true,
         "PrimaryGroup": {
           "Name": "Textures"
@@ -654,11 +658,12 @@
         "Identifier": "91",
         "Output": "Result"
       },
-      "Texture": "textures/matrixrain/1k/letters_lanes_pixel_variations_png_ce2530e1.generated.vtex",
+      "Image": "textures/matrixrain/1k/letters_lanes_pixel_variations.png",
       "Sampler": {},
       "UI": {
         "Name": "Not Moving Mask",
         "Default": "1,1,1,1",
+        "ImageFormat": "BC7",
         "SrgbRead": true,
         "PrimaryGroup": {
           "Name": "Textures"
@@ -990,7 +995,7 @@
         "Output": "G"
       },
       "Identifier": "76",
-      "Position": "4320,320"
+      "Position": "4320,336"
     },
     {
       "_class": "Multiply",
@@ -1194,11 +1199,11 @@
         "Output": "Result"
       },
       "Identifier": "92",
-      "Position": "400,-928"
+      "Position": "400,-944"
     },
     {
       "_class": "Reroute",
-      "Comment": "",
+      "Comment": "Texture Coord Highway",
       "Input": {
         "Identifier": "92",
         "Output": "Result"
@@ -1224,7 +1229,7 @@
         "Output": "Result"
       },
       "Identifier": "95",
-      "Position": "400,-752"
+      "Position": "400,-816"
     },
     {
       "_class": "Reroute",
@@ -1244,7 +1249,7 @@
         "Output": "Result"
       },
       "Identifier": "97",
-      "Position": "4976,320"
+      "Position": "5344,336"
     },
     {
       "_class": "CommentNode",
@@ -1311,7 +1316,7 @@
         }
       },
       "Identifier": "102",
-      "Position": "5248,336"
+      "Position": "5248,384"
     },
     {
       "_class": "ScreenCoordinate",

@@ -35,12 +35,16 @@ COMMON
 struct VertexInput
 {
 	#include "common/vertexinput.hlsl"
+	float4 vColor : COLOR0 < Semantic( Color ); >;
 };
 
 struct PixelInput
 {
 	#include "common/pixelinput.hlsl"
 	float3 vPositionOs : TEXCOORD14;
+	float3 vNormalOs : TEXCOORD15;
+	float4 vTangentUOs_flTangentVSign : TANGENT	< Semantic( TangentU_SignV ); >;
+	float4 vColor : COLOR0;
 };
 
 VS
@@ -51,6 +55,9 @@ VS
 	{
 		PixelInput i = ProcessVertex( v );
 		i.vPositionOs = v.vPositionOs.xyz;
+		i.vColor = v.vColor;
+
+		VS_DecodeObjectSpaceNormalAndTangent( v, i.vNormalOs, i.vTangentUOs_flTangentVSign );
 
 		return FinalizeVertex( i );
 	}
@@ -66,11 +73,11 @@ PS
 	CreateInputTexture2D( MovingTextures_0, Srgb, 8, "None", "_color", "Textures,0/,0/0", Default4( 1.00, 1.00, 1.00, 1.00 ) );
 	CreateInputTexture2D( MovingTextures_1, Srgb, 8, "None", "_color", "Textures,0/,0/0", Default4( 1.00, 1.00, 1.00, 1.00 ) );
 	CreateInputTexture2D( MovingTextures_2, Srgb, 8, "None", "_color", "Textures,0/,0/0", Default4( 1.00, 1.00, 1.00, 1.00 ) );
-	Texture2D g_tMovingTextures < Channel( RGBA, Box( MovingTextures ), Srgb ); OutputFormat( DXT5 ); SrgbRead( True ); >;
-	Texture2D g_tNotMovingMask < Channel( RGBA, Box( NotMovingMask ), Srgb ); OutputFormat( DXT5 ); SrgbRead( True ); >;
-	Texture2D g_tMovingTextures_0 < Channel( RGBA, Box( MovingTextures_0 ), Srgb ); OutputFormat( DXT5 ); SrgbRead( True ); >;
-	Texture2D g_tMovingTextures_1 < Channel( RGBA, Box( MovingTextures_1 ), Srgb ); OutputFormat( DXT5 ); SrgbRead( True ); >;
-	Texture2D g_tMovingTextures_2 < Channel( RGBA, Box( MovingTextures_2 ), Srgb ); OutputFormat( DXT5 ); SrgbRead( True ); >;
+	Texture2D g_tMovingTextures < Channel( RGBA, Box( MovingTextures ), Srgb ); OutputFormat( BC7 ); SrgbRead( True ); >;
+	Texture2D g_tNotMovingMask < Channel( RGBA, Box( NotMovingMask ), Srgb ); OutputFormat( BC7 ); SrgbRead( True ); >;
+	Texture2D g_tMovingTextures_0 < Channel( RGBA, Box( MovingTextures_0 ), Srgb ); OutputFormat( BC7 ); SrgbRead( True ); >;
+	Texture2D g_tMovingTextures_1 < Channel( RGBA, Box( MovingTextures_1 ), Srgb ); OutputFormat( BC7 ); SrgbRead( True ); >;
+	Texture2D g_tMovingTextures_2 < Channel( RGBA, Box( MovingTextures_2 ), Srgb ); OutputFormat( BC7 ); SrgbRead( True ); >;
 	bool g_bUseScreenCoordinates < UiGroup( "Parameters,0/,0/6" ); Default( 0 ); >;
 	float2 g_vTileXYAmount < UiGroup( "Parameters,0/,0/3" ); Default2( 1,1 ); >;
 	float g_flRainSpeed < UiType( Slider ); UiGroup( "Parameters,0/,0/4" ); Default1( 8 ); Range1( 0, 64 ); >;

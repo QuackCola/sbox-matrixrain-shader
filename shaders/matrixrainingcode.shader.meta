@@ -1,16 +1,18 @@
 {
   "publish": {
+    "Allowed": true,
     "Enabled": true,
     "ProjectConfig": {
       "Title": "Matrix Raining Code Shader",
       "Type": "shader",
       "Org": "quack",
-      "Ident": "matrixrain",
+      "Ident": "matrixrain_shader",
       "Tags": "shader matrix",
       "Schema": 0,
       "HasAssets": false,
       "AssetsPath": null,
-      "ResourcePaths": null,
+      "Resources": null,
+      "MenuResources": null,
       "HasCode": false,
       "CodePath": null,
       "PackageReferences": null,

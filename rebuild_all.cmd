@@ -7,7 +7,8 @@ FOR /F "skip=2 tokens=2,*" %%A IN ('reg.exe query "HKEY_LOCAL_MACHINE\SOFTWARE\M
 set contentbuilder=%sboxinstalldir%\bin\win64\contentbuilder.exe
 
 :: Build all assets ( Excluding maps & shaders )
-"%contentbuilder%" -b -o -nop4 -v -f
+:: Note: Dosent like folders with spaces. 
+"%contentbuilder%" -b -o -nop4 -v -f -path "%~dp0"
 
 :: Delete contentbuild folders in .source2 
 pushd "%sboxinstalldir%\.source2"

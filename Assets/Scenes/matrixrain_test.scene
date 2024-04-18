@@ -1,16 +1,18 @@
 {
-  "Id": "c227912c-7511-4b99-aa4e-20c473109eb0",
+  "__guid": "c227912c-7511-4b99-aa4e-20c473109eb0",
   "GameObjects": [
     {
-      "Id": "bfc59c12-1ed2-4f91-8956-a95a315eac3c",
+      "__guid": "bfc59c12-1ed2-4f91-8956-a95a315eac3c",
       "Name": "Sun",
       "Position": "-32,0.000005486069,128",
       "Rotation": "-0.0000000377291,0.6329893,0.0000000000000005185386,0.774161",
       "Tags": "light_directional,light",
       "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
-          "__type": "DirectionalLight",
+          "__type": "Sandbox.DirectionalLight",
+          "__guid": "b3958cc1-8586-411d-a61b-cd7f0d513ac7",
           "FogMode": "Enabled",
           "FogStrength": 1,
           "LightColor": "0.91373,0.98039,1,1",
@@ -20,47 +22,59 @@
       ]
     },
     {
-      "Id": "00344a8c-fa5e-45ae-b12a-10bb781a1dc3",
+      "__guid": "00344a8c-fa5e-45ae-b12a-10bb781a1dc3",
       "Name": "2D Skybox",
       "Position": "0,-0,64",
       "Tags": "skybox",
       "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
-          "__type": "SkyBox2D",
+          "__type": "Sandbox.SkyBox2D",
+          "__guid": "dfc86a54-9398-4b93-9e1a-4b98752b62bc",
           "SkyMaterial": "materials/skybox/light_test_sky_sunny02.vmat",
           "Tint": "1,1,1,1"
         },
         {
-          "__type": "EnvmapProbe",
+          "__type": "Sandbox.EnvmapProbe",
+          "__guid": "6fe3c76c-dbdd-438d-9db1-11236dd8ad4f",
+          "Texture": "textures/cubemaps/default2.vtex",
           "Bounds": {
             "Mins": "-1024,-1024,-512",
             "Maxs": "1024,1024,512"
           },
+          "DelayBetweenUpdates": 0.1,
           "Feathering": 0.02,
+          "FrameInterval": 5,
+          "MaxDistance": 512,
           "Projection": "Sphere",
-          "Texture": "textures/cubemaps/default2.vtex",
-          "TintColor": "1,1,1,1"
+          "RenderDynamically": false,
+          "TintColor": "1,1,1,1",
+          "UpdateStrategy": "OnEnabled",
+          "ZFar": 4096,
+          "ZNear": 16
         }
       ]
     },
     {
-      "Id": "6ad70641-3c6c-4402-9c85-9a4969af4764",
+      "__guid": "6ad70641-3c6c-4402-9c85-9a4969af4764",
       "Name": "Plane",
       "Scale": "16,16,3",
       "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
-          "__type": "ModelRenderer",
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "5cb1425d-1b6b-403e-9d56-3da1e84c25e0",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
           "MaterialOverride": "materials/dev/dev_metal_rough50.vmat",
           "Model": "models/dev/plane.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
         },
         {
-          "__type": "BoxCollider",
+          "__type": "Sandbox.BoxCollider",
+          "__guid": "88ca363a-4ea4-403f-a3b1-4704ebd07542",
           "Center": "0,0,-1",
           "IsTrigger": false,
           "Scale": "100,100,2",
@@ -70,17 +84,18 @@
       ]
     },
     {
-      "Id": "3c2490ef-54a0-49bb-8f13-490e40aa51d1",
+      "__guid": "3c2490ef-54a0-49bb-8f13-490e40aa51d1",
       "Name": "Cube",
       "Position": "128,-8,63.99999",
       "Rotation": "0.00000001819328,-0.00000000000000008235059,0.3052325,0.952278",
       "Scale": "0.5632889,0.5632889,0.5632889",
       "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
-          "__type": "ModelRenderer",
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "c7e5c433-28f3-46d0-8e93-ff14ec59ac1d",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
           "MaterialOverride": "materials/dev/dev_metal_rough20.vmat",
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
@@ -88,40 +103,43 @@
         },
         {
           "__type": "MyComponent",
-          "StringProperty": null
+          "__guid": "4d3fa331-3beb-41ec-9ae2-6089702fb0ee"
         },
         {
-          "__type": "BoxCollider",
+          "__type": "Sandbox.BoxCollider",
+          "__guid": "b60cb0f5-b679-4813-8028-06f23388971d",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
+          "Static": false
         },
         {
-          "__type": "Rigidbody",
+          "__type": "Sandbox.Rigidbody",
+          "__guid": "ebc9d555-c72e-4095-afe0-383a799e80ef",
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
           "MassOverride": 0,
+          "MotionEnabled": true,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         }
       ]
     },
     {
-      "Id": "85963739-706f-4439-b268-5cda7a549b93",
+      "__guid": "85963739-706f-4439-b268-5cda7a549b93",
       "Name": "Cube (1)",
       "Position": "128,64,63.99999",
       "Rotation": "0.0000000168084,-0.000000006962269,0.646419,0.7629828",
       "Scale": "0.5632889,0.5632889,0.5632889",
       "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
-          "__type": "ModelRenderer",
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "622751a8-9fc0-4845-9b95-23f2d2a90b4d",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
           "MaterialOverride": "materials/dev/dev_metal_rough20.vmat",
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
@@ -129,37 +147,41 @@
         },
         {
           "__type": "MyComponent",
-          "StringProperty": null
+          "__guid": "ebd53aa8-4f07-444c-a519-c55efa5482b5"
         },
         {
-          "__type": "BoxCollider",
+          "__type": "Sandbox.BoxCollider",
+          "__guid": "ba910932-3787-4e41-88de-6571425d9381",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
+          "Static": false
         },
         {
-          "__type": "Rigidbody",
+          "__type": "Sandbox.Rigidbody",
+          "__guid": "1935b4c4-968a-4600-b8cc-2c6f1f2dbc11",
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
           "MassOverride": 0,
+          "MotionEnabled": true,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         }
       ]
     },
     {
-      "Id": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a",
+      "__guid": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a",
       "Name": "Camera",
       "Position": "-832,0,352",
       "Rotation": "-0.00000002061293,0.2079117,0.000000004381413,0.9781476",
       "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
-          "__type": "CameraComponent",
+          "__type": "Sandbox.CameraComponent",
+          "__guid": "0e6c06f6-6bb7-476b-a5ba-24ebbfc9e230",
           "BackgroundColor": "0.33333,0.46275,0.52157,1",
           "ClearFlags": "All",
           "FieldOfView": 60,
@@ -176,20 +198,22 @@
         },
         {
           "__type": "NoClip",
+          "__guid": "415cafcd-5c35-4471-bbd3-0ed8949de101",
           "MoveSpeed": 600
         }
       ]
     },
     {
-      "Id": "4d799914-2fc4-442d-b996-3987a7bbaec7",
+      "__guid": "4d799914-2fc4-442d-b996-3987a7bbaec7",
       "Name": "Sphere",
       "Position": "77.85095,-54.47409,75.64613",
       "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
-          "__type": "ModelRenderer",
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "3a802a83-560d-461a-817c-26318f261f45",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
           "MaterialOverride": "materials/matrixrain/matrixrain.vmat",
           "Model": "models/dev/sphere.vmdl",
           "RenderType": "On",
@@ -221,6 +245,8 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-02-17T02:00:05.3777212-05:00",
+  "LastSaved": "2024-04-18T07:07:50.6499059-04:00",
+  "ResourceVersion": 1,
+  "__version": 1,
   "__references": []
 }

@@ -6,7 +6,7 @@ FOR /F "skip=2 tokens=2,*" %%A IN ('reg.exe query "HKEY_LOCAL_MACHINE\SOFTWARE\M
 
 set vfxcompile=%sboxinstalldir%\bin\win64\vfxcompile.exe
 
-pushd shaders
+pushd Assets/shaders
 
 ::for /r %%i in (*.shader) do CALL echo "%%i"
 for /r %%i in (*.shader) do "%vfxcompile%" "%%i"

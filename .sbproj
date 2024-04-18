@@ -5,12 +5,7 @@
   "Ident": "sbox_matrixrain_shader",
   "Tags": null,
   "Schema": 1,
-  "HasAssets": true,
-  "AssetsPath": "",
   "Resources": null,
-  "MenuResources": "*",
-  "HasCode": true,
-  "CodePath": "/code/",
   "PackageReferences": [],
   "EditorReferences": null,
   "Metadata": {
@@ -26,7 +21,8 @@
     "PerMapRanking": false,
     "LeaderboardType": "None",
     "CsProjName": "",
-    "StartupScene": "scenes/minimal.scene",
-    "ProjectTemplate": null
+    "StartupScene": "scenes/matrixrain_test.scene",
+    "ProjectTemplate": null,
+    "LaunchMode": "Normal"
   }
 }

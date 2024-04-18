@@ -8,7 +8,7 @@ set contentbuilder=%sboxinstalldir%\bin\win64\contentbuilder.exe
 
 :: Build all assets ( Excluding maps & shaders )
 :: Note: Dosent like folders with spaces. 
-"%contentbuilder%" -b -o -nop4 -v -f -path "%~dp0"
+"%contentbuilder%" -b -o -nop4 -v -f -path "Assets"
 
 :: Delete contentbuild folders in .source2 
 pushd "%sboxinstalldir%\.source2"

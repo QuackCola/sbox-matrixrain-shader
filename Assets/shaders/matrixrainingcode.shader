@@ -47,6 +47,7 @@ struct PixelInput
 	float3 vNormalOs : TEXCOORD15;
 	float4 vTangentUOs_flTangentVSign : TANGENT	< Semantic( TangentU_SignV ); >;
 	float4 vColor : COLOR0;
+	float4 vTintColor : COLOR1;
 };
 
 VS
@@ -58,6 +59,9 @@ VS
 		PixelInput i = ProcessVertex( v );
 		i.vPositionOs = v.vPositionOs.xyz;
 		i.vColor = v.vColor;
+
+		ExtraShaderData_t extraShaderData = GetExtraPerInstanceShaderData( v );
+		i.vTintColor = extraShaderData.vTint;
 
 		VS_DecodeObjectSpaceNormalAndTangent( v, i.vNormalOs, i.vTangentUOs_flTangentVSign );
 
@@ -80,15 +84,15 @@ PS
 	Texture2D g_tMovingTextures_0 < Channel( RGBA, Box( MovingTextures_0 ), Srgb ); OutputFormat( BC7 ); SrgbRead( True ); >;
 	Texture2D g_tMovingTextures_1 < Channel( RGBA, Box( MovingTextures_1 ), Srgb ); OutputFormat( BC7 ); SrgbRead( True ); >;
 	Texture2D g_tMovingTextures_2 < Channel( RGBA, Box( MovingTextures_2 ), Srgb ); OutputFormat( BC7 ); SrgbRead( True ); >;
-	bool g_bUseScreenCoordinates < UiGroup( "Parameters,0/,0/6" ); Default( 0 ); >;
-	float2 g_vTileXYAmount < UiGroup( "Parameters,0/,0/3" ); Default2( 1,1 ); >;
+	bool g_bUseScreenCoordinates < Attribute( "UseScreenCoordinates" ); >;
+	float2 g_vTileXYAmount < UiGroup( "Parameters,0/,0/3" ); Default2( 1,1 ); Range2( 0,0, 1,1 ); >;
 	float g_flRainSpeed < UiType( Slider ); UiGroup( "Parameters,0/,0/4" ); Default1( 8 ); Range1( 0, 64 ); >;
 	float g_flStepInCharacters < UiGroup( "Parameters,0/,0/6" ); Default1( 0.015625 ); Range1( 0, 1 ); >;
 	float g_flDoubleSpeedValue < UiGroup( "Parameters,0/,0/6" ); Default1( 0.2 ); Range1( 0, 1 ); >;
 	float g_flRainBrightness < UiType( Slider ); UiGroup( "Parameters,0/,0/4" ); Default1( 1 ); Range1( 0, 8 ); >;
 	float4 g_vLettersColor < UiType( Color ); UiGroup( "Parameters,0/,0/0" ); Default4( 0.40, 1.00, 0.22, 1.00 ); >;
 	float4 g_vLettersColorEmission < UiType( Color ); UiGroup( "Parameters,0/,0/1" ); Default4( 0.83, 1.00, 0.79, 1.00 ); >;
-	bool g_bEnableTransparency < UiGroup( ",0/,0/0" ); Default( 0 ); >;
+	bool g_bEnableTransparency < Attribute( "EnableTransparency" ); >;
 	
 	float4 MainPs( PixelInput i ) : SV_Target0
 	{

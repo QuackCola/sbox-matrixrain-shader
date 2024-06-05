@@ -1365,6 +1365,8 @@
     },
     {
       "_class": "Float2",
+      "Min": "0,0",
+      "Max": "1,1",
       "Value": "1,1",
       "Name": "Tile X,Y Amount",
       "IsAttribute": false,

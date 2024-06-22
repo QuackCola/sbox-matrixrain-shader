@@ -104,7 +104,7 @@
           "__type": "Sandbox.ModelRenderer",
           "__guid": "c7e5c433-28f3-46d0-8e93-ff14ec59ac1d",
           "BodyGroups": 18446744073709551615,
-          "MaterialOverride": "materials/dev/dev_metal_rough20.vmat",
+          "MaterialOverride": "materials/matrixrain/matrixrain.vmat",
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
@@ -139,7 +139,7 @@
       "__guid": "85963739-706f-4439-b268-5cda7a549b93",
       "Flags": 0,
       "Name": "Cube (1)",
-      "Position": "128,64,63.99999",
+      "Position": "144.4696,31.51324,64.33507",
       "Rotation": "0.0000000168084,-0.000000006962269,0.646419,0.7629828",
       "Scale": "0.5632889,0.5632889,0.5632889",
       "Enabled": true,
@@ -150,7 +150,7 @@
           "__type": "Sandbox.ModelRenderer",
           "__guid": "622751a8-9fc0-4845-9b95-23f2d2a90b4d",
           "BodyGroups": 18446744073709551615,
-          "MaterialOverride": "materials/dev/dev_metal_rough20.vmat",
+          "MaterialOverride": "materials/matrixrain/matrixrain.vmat",
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
@@ -259,7 +259,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-06-05T12:03:33.7515953-04:00",
+  "LastSaved": "2024-06-22T16:20:49.9841449-04:00",
   "ResourceVersion": 1,
   "__references": [],
   "__version": 1

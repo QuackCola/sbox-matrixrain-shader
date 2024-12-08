@@ -84,7 +84,7 @@ PS
 	Texture2D g_tMovingTextures_0 < Channel( RGBA, Box( MovingTextures_0 ), Srgb ); OutputFormat( BC7 ); SrgbRead( True ); >;
 	Texture2D g_tMovingTextures_1 < Channel( RGBA, Box( MovingTextures_1 ), Srgb ); OutputFormat( BC7 ); SrgbRead( True ); >;
 	Texture2D g_tMovingTextures_2 < Channel( RGBA, Box( MovingTextures_2 ), Srgb ); OutputFormat( BC7 ); SrgbRead( True ); >;
-	bool g_bUseScreenCoordinates < Attribute( "UseScreenCoordinates" ); >;
+	bool g_bUseScreenCoordinates < Attribute( "UseScreenCoordinates" ); Default( 0 ); >;
 	float2 g_vTileXYAmount < UiGroup( "Parameters,0/,0/3" ); Default2( 1,1 ); Range2( 0,0, 1,1 ); >;
 	float g_flRainSpeed < UiType( Slider ); UiGroup( "Parameters,0/,0/4" ); Default1( 8 ); Range1( 0, 64 ); >;
 	float g_flStepInCharacters < UiGroup( "Parameters,0/,0/6" ); Default1( 0.015625 ); Range1( 0, 1 ); >;
@@ -92,7 +92,7 @@ PS
 	float g_flRainBrightness < UiType( Slider ); UiGroup( "Parameters,0/,0/4" ); Default1( 1 ); Range1( 0, 8 ); >;
 	float4 g_vLettersColor < UiType( Color ); UiGroup( "Parameters,0/,0/0" ); Default4( 0.40, 1.00, 0.22, 1.00 ); >;
 	float4 g_vLettersColorEmission < UiType( Color ); UiGroup( "Parameters,0/,0/1" ); Default4( 0.83, 1.00, 0.79, 1.00 ); >;
-	bool g_bEnableTransparency < Attribute( "EnableTransparency" ); >;
+	bool g_bEnableTransparency < Attribute( "EnableTransparency" ); Default( 0 ); >;
 	
 	float4 MainPs( PixelInput i ) : SV_Target0
 	{
@@ -119,8 +119,8 @@ PS
 		float l_9 = g_flStepInCharacters;
 		float l_10 = l_8 * l_9;
 		float l_11 = l_6 - l_10;
-		float4 l_12 = float4( l_5, l_11, 0, 0 );
-		float4 l_13 = Tex2DS( g_tMovingTextures, g_sSampler0, l_12.xy );
+		float2 l_12 = float2( l_5, l_11);
+		float4 l_13 = Tex2DS( g_tMovingTextures, g_sSampler0, l_12 );
 		float4 l_14 = Tex2DS( g_tNotMovingMask, g_sSampler0, l_4 );
 		float l_15 = 1 - l_14.r;
 		float4 l_16 = l_13 * float4( l_15, l_15, l_15, l_15 );
@@ -128,22 +128,22 @@ PS
 		float l_18 = l_8 * l_17;
 		float l_19 = l_18 * l_9;
 		float l_20 = l_6 - l_19;
-		float4 l_21 = float4( l_5, l_20, 0, 0 );
-		float4 l_22 = Tex2DS( g_tMovingTextures_0, g_sSampler0, l_21.xy );
+		float2 l_21 = float2( l_5, l_20);
+		float4 l_22 = Tex2DS( g_tMovingTextures_0, g_sSampler0, l_21 );
 		float4 l_23 = float4( l_14.r, l_14.r, l_14.r, l_14.r ) * l_22;
 		float4 l_24 = l_16 + l_23;
 		float l_25 = l_24.x;
 		float l_26 = ceil( l_18 );
 		float l_27 = l_26 * l_9;
 		float l_28 = l_6 - l_27;
-		float4 l_29 = float4( l_5, l_28, 0, 0 );
-		float4 l_30 = Tex2DS( g_tMovingTextures_1, g_sSampler0, l_29.xy );
+		float2 l_29 = float2( l_5, l_28);
+		float4 l_30 = Tex2DS( g_tMovingTextures_1, g_sSampler0, l_29 );
 		float4 l_31 = float4( l_14.r, l_14.r, l_14.r, l_14.r ) * l_30;
 		float l_32 = ceil( l_8 );
 		float l_33 = l_32 * l_9;
 		float l_34 = l_6 - l_33;
-		float4 l_35 = float4( l_5, l_34, 0, 0 );
-		float4 l_36 = Tex2DS( g_tMovingTextures_2, g_sSampler0, l_35.xy );
+		float2 l_35 = float2( l_5, l_34);
+		float4 l_36 = Tex2DS( g_tMovingTextures_2, g_sSampler0, l_35 );
 		float4 l_37 = float4( l_15, l_15, l_15, l_15 ) * l_36;
 		float4 l_38 = l_31 + l_37;
 		float l_39 = l_38.y;

@@ -1,0 +1,20 @@
+{
+  "publish": {
+    "Enabled": true,
+    "ProjectConfig": {
+      "Title": "matrixrainingcode",
+      "Type": "shader",
+      "Org": "quack",
+      "Ident": "matrixrainingcode",
+      "Tags": "matrix",
+      "Schema": 0,
+      "IncludeSourceFiles": false,
+      "Resources": null,
+      "PackageReferences": null,
+      "EditorReferences": null,
+      "Metadata": {
+        "SingleAssetSource": "shaders/matrixrainingcode.shdrgrph"
+      }
+    }
+  }
+}

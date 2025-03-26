@@ -11,10 +11,8 @@ FEATURES
 
 MODES
 {
-	VrForward();
-	Depth(); 
-	ToolsVis( S_MODE_TOOLS_VIS );
-	ToolsWireframe( "vr_tools_wireframe.shader" );
+	Forward();
+	Depth( S_MODE_DEPTH );
 	ToolsShadingComplexity( "tools_shading_complexity.shader" );
 }
 
@@ -56,16 +54,17 @@ VS
 
 	PixelInput MainVs( VertexInput v )
 	{
+		
 		PixelInput i = ProcessVertex( v );
 		i.vPositionOs = v.vPositionOs.xyz;
 		i.vColor = v.vColor;
-
+		
 		ExtraShaderData_t extraShaderData = GetExtraPerInstanceShaderData( v );
 		i.vTintColor = extraShaderData.vTint;
-
+		
 		VS_DecodeObjectSpaceNormalAndTangent( v, i.vNormalOs, i.vTangentUOs_flTangentVSign );
-
 		return FinalizeVertex( i );
+		
 	}
 }
 
@@ -84,6 +83,8 @@ PS
 	Texture2D g_tMovingTextures_0 < Channel( RGBA, Box( MovingTextures_0 ), Srgb ); OutputFormat( BC7 ); SrgbRead( True ); >;
 	Texture2D g_tMovingTextures_1 < Channel( RGBA, Box( MovingTextures_1 ), Srgb ); OutputFormat( BC7 ); SrgbRead( True ); >;
 	Texture2D g_tMovingTextures_2 < Channel( RGBA, Box( MovingTextures_2 ), Srgb ); OutputFormat( BC7 ); SrgbRead( True ); >;
+	TextureAttribute( LightSim_DiffuseAlbedoTexture, g_tMovingTextures_2 )
+	TextureAttribute( RepresentativeTexture, g_tMovingTextures_2 )
 	bool g_bUseScreenCoordinates < Attribute( "UseScreenCoordinates" ); Default( 0 ); >;
 	float2 g_vTileXYAmount < UiGroup( "Parameters,0/,0/3" ); Default2( 1,1 ); Range2( 0,0, 1,1 ); >;
 	float g_flRainSpeed < UiType( Slider ); UiGroup( "Parameters,0/,0/4" ); Default1( 8 ); Range1( 0, 64 ); >;
@@ -96,6 +97,7 @@ PS
 	
 	float4 MainPs( PixelInput i ) : SV_Target0
 	{
+		
 		Material m = Material::Init();
 		m.Albedo = float3( 1, 1, 1 );
 		m.Normal = float3( 0, 0, 1 );
@@ -167,19 +169,20 @@ PS
 		m.Metalness = 0;
 		m.AmbientOcclusion = 0;
 		
+		
 		m.AmbientOcclusion = saturate( m.AmbientOcclusion );
 		m.Roughness = saturate( m.Roughness );
 		m.Metalness = saturate( m.Metalness );
 		m.Opacity = saturate( m.Opacity );
-
+		
 		// Result node takes normal as tangent space, convert it to world space now
 		m.Normal = TransformNormal( m.Normal, i.vNormalWs, i.vTangentUWs, i.vTangentVWs );
-
+		
 		// for some toolvis shit
 		m.WorldTangentU = i.vTangentUWs;
 		m.WorldTangentV = i.vTangentVWs;
-        m.TextureCoords = i.vTextureCoords.xy;
-		
+		m.TextureCoords = i.vTextureCoords.xy;
+				
 		return ShadingModelStandard::Shade( i, m );
 	}
 }

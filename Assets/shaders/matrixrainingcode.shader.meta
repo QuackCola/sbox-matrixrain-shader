@@ -1,0 +1,26 @@
+{
+  "publish": {
+    "Enabled": true,
+    "ProjectConfig": {
+      "Title": "Matrix Raining Code Shader",
+      "Type": "shader",
+      "Org": "quack",
+      "Ident": "matrixrain_shader",
+      "Schema": 0,
+      "IncludeSourceFiles": false,
+      "Resources": null,
+      "PackageReferences": null,
+      "EditorReferences": null,
+      "Mounts": null,
+      "IsStandaloneOnly": false,
+      "Metadata": {
+        "SingleAssetSource": "shaders/matrixrainingcode.shader",
+        "Summary": "matrix rain effect ",
+        "Description": "Original Shader: https://github.com/SwingDev/matrix-rain-of-letters/ : ",
+        "Public": false,
+        "ReplaceTags": "shader matrix"
+      }
+    }
+  },
+  "guid": "5ba7e850-009d-0000-78e8-a75b9d000000"
+}

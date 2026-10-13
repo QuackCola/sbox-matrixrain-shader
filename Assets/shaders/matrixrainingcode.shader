@@ -12,7 +12,7 @@ FEATURES
 MODES
 {
 	Forward();
-	Depth( S_MODE_DEPTH );
+	Depth();
 	ToolsShadingComplexity( "tools_shading_complexity.shader" );
 }
 
@@ -29,7 +29,6 @@ COMMON
 	#include "procedural.hlsl"
 
 	#define S_UV2 1
-	#define CUSTOM_MATERIAL_INPUTS
 }
 
 struct VertexInput
@@ -46,6 +45,9 @@ struct PixelInput
 	float4 vTangentUOs_flTangentVSign : TANGENT	< Semantic( TangentU_SignV ); >;
 	float4 vColor : COLOR0;
 	float4 vTintColor : COLOR1;
+	#if ( PROGRAM == VFX_PROGRAM_PS )
+		bool vFrontFacing : SV_IsFrontFace;
+	#endif
 };
 
 VS
@@ -59,7 +61,7 @@ VS
 		i.vPositionOs = v.vPositionOs.xyz;
 		i.vColor = v.vColor;
 		
-		ExtraShaderData_t extraShaderData = GetExtraPerInstanceShaderData( v );
+		ExtraShaderData_t extraShaderData = GetExtraPerInstanceShaderData( v.nInstanceTransformID );
 		i.vTintColor = extraShaderData.vTint;
 		
 		VS_DecodeObjectSpaceNormalAndTangent( v, i.vNormalOs, i.vTangentUOs_flTangentVSign );
@@ -71,13 +73,14 @@ VS
 PS
 {
 	#include "common/pixel.hlsl"
-	
+	RenderState( CullMode, F_RENDER_BACKFACES ? NONE : DEFAULT );
+		
 	SamplerState g_sSampler0 < Filter( ANISO ); AddressU( WRAP ); AddressV( WRAP ); >;
-	CreateInputTexture2D( MovingTextures, Srgb, 8, "None", "_color", "Textures,0/,0/0", Default4( 1.00, 1.00, 1.00, 1.00 ) );
-	CreateInputTexture2D( NotMovingMask, Srgb, 8, "None", "_color", "Textures,0/,0/0", Default4( 1.00, 1.00, 1.00, 1.00 ) );
-	CreateInputTexture2D( MovingTextures_0, Srgb, 8, "None", "_color", "Textures,0/,0/0", Default4( 1.00, 1.00, 1.00, 1.00 ) );
-	CreateInputTexture2D( MovingTextures_1, Srgb, 8, "None", "_color", "Textures,0/,0/0", Default4( 1.00, 1.00, 1.00, 1.00 ) );
-	CreateInputTexture2D( MovingTextures_2, Srgb, 8, "None", "_color", "Textures,0/,0/0", Default4( 1.00, 1.00, 1.00, 1.00 ) );
+	CreateInputTexture2D( MovingTextures, Srgb, 8, "None", "_color", "Textures,0/,0/0", DefaultFile( "textures/matrixrain/1k/moving_textures.png" ) );
+	CreateInputTexture2D( NotMovingMask, Srgb, 8, "None", "_color", "Textures,0/,0/0", DefaultFile( "textures/matrixrain/1k/letters_lanes_pixel_variations.png" ) );
+	CreateInputTexture2D( MovingTextures_0, Srgb, 8, "None", "_color", "Textures,0/,0/0", DefaultFile( "textures/matrixrain/1k/moving_textures.png" ) );
+	CreateInputTexture2D( MovingTextures_1, Srgb, 8, "None", "_color", "Textures,0/,0/0", DefaultFile( "textures/matrixrain/1k/moving_textures.png" ) );
+	CreateInputTexture2D( MovingTextures_2, Srgb, 8, "None", "_color", "Textures,0/,0/0", DefaultFile( "textures/matrixrain/1k/moving_textures.png" ) );
 	Texture2D g_tMovingTextures < Channel( RGBA, Box( MovingTextures ), Srgb ); OutputFormat( BC7 ); SrgbRead( True ); >;
 	Texture2D g_tNotMovingMask < Channel( RGBA, Box( NotMovingMask ), Srgb ); OutputFormat( BC7 ); SrgbRead( True ); >;
 	Texture2D g_tMovingTextures_0 < Channel( RGBA, Box( MovingTextures_0 ), Srgb ); OutputFormat( BC7 ); SrgbRead( True ); >;
@@ -85,7 +88,7 @@ PS
 	Texture2D g_tMovingTextures_2 < Channel( RGBA, Box( MovingTextures_2 ), Srgb ); OutputFormat( BC7 ); SrgbRead( True ); >;
 	TextureAttribute( LightSim_DiffuseAlbedoTexture, g_tMovingTextures_2 )
 	TextureAttribute( RepresentativeTexture, g_tMovingTextures_2 )
-	bool g_bUseScreenCoordinates < Attribute( "UseScreenCoordinates" ); Default( 0 ); >;
+	bool g_bUseScreenCoordinates < Attribute( "Use Screen Coordinates" ); Default( 0 ); >;
 	float2 g_vTileXYAmount < UiGroup( "Parameters,0/,0/3" ); Default2( 1,1 ); Range2( 0,0, 1,1 ); >;
 	float g_flRainSpeed < UiType( Slider ); UiGroup( "Parameters,0/,0/4" ); Default1( 8 ); Range1( 0, 64 ); >;
 	float g_flStepInCharacters < UiGroup( "Parameters,0/,0/6" ); Default1( 0.015625 ); Range1( 0, 1 ); >;
@@ -93,12 +96,12 @@ PS
 	float g_flRainBrightness < UiType( Slider ); UiGroup( "Parameters,0/,0/4" ); Default1( 1 ); Range1( 0, 8 ); >;
 	float4 g_vLettersColor < UiType( Color ); UiGroup( "Parameters,0/,0/0" ); Default4( 0.40, 1.00, 0.22, 1.00 ); >;
 	float4 g_vLettersColorEmission < UiType( Color ); UiGroup( "Parameters,0/,0/1" ); Default4( 0.83, 1.00, 0.79, 1.00 ); >;
-	bool g_bEnableTransparency < Attribute( "EnableTransparency" ); Default( 0 ); >;
+	bool g_bEnableTransparency < Attribute( "Enable Transparency" ); Default( 0 ); >;
 	
 	float4 MainPs( PixelInput i ) : SV_Target0
 	{
 		
-		Material m = Material::Init();
+		Material m = Material::Init( i );
 		m.Albedo = float3( 1, 1, 1 );
 		m.Normal = float3( 0, 0, 1 );
 		m.Roughness = 1;
@@ -183,6 +186,6 @@ PS
 		m.WorldTangentV = i.vTangentVWs;
 		m.TextureCoords = i.vTextureCoords.xy;
 				
-		return ShadingModelStandard::Shade( i, m );
+		return ShadingModelStandard::Shade( m );
 	}
 }
